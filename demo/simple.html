@@ -17,7 +17,15 @@
     <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
     <script src="../src/jquery.deanimate.js"></script>
     <style type="text/css">
-
+    #card-1 {
+        position: relative;
+    }
+    
+    #card-1 .front,
+    #card-1 .back {
+        position: absolute;
+        width: 100%;
+    }
     </style>
     <script type="text/javascript">
     function onload() {
@@ -33,20 +41,9 @@
 
 <body onload="onload()">
     <div class="container">
-
         <h1>Flip <small>click any of these components below</small></h1>
-
         <div style="margin-top: 30px">
-
             <div id="card-1" class="col-lg-3">
-                <div class="front panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Front of Panel title 1</h3>
-                    </div>
-                    <div class="panel-body">
-                        Front of Panel content 1
-                    </div>
-                </div>
                 <div class="back panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Back of Panel title 1</h3>
@@ -55,8 +52,15 @@
                         Back of Panel content 1
                     </div>
                 </div>
+                <div class="front panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Front of Panel title 1</h3>
+                    </div>
+                    <div class="panel-body">
+                        Front of Panel content 1
+                    </div>
+                </div>
             </div>
-
             <div id="card-2" class="col-lg-offset-1 col-lg-3">
                 <div class="deanimate-front panel panel-default">
                     <div class="panel-heading">
@@ -75,7 +79,6 @@
                     </div>
                 </div>
             </div>
-
             <div id="card-3" class="col-lg-offset-1 col-lg-3">
                 <div class="deanimate-front front panel panel-default">
                     <div class="panel-heading">
