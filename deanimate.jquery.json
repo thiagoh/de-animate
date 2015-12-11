@@ -1,0 +1,27 @@
+{
+    "name": "deanimate",
+    "title": "DeAnimate",
+    "description": "A jQuery lightweight plugin for Animation",
+    "version": "0.1.0",
+    "homepage": "https://github.com/thiagoh/de-animate",
+    "author": {
+        "name": "Thiago Andrade",
+        "email": "thiagoh@gmail.com",
+        "url": "https://about.me/thiagoh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/thiagoh/de-animate"
+    },
+    "bugs": "https://github.com/thiagoh/de-animate/issues",
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/thiagoh/de-animate/blob/master/LICENSE-MIT"
+    }],
+    "dependencies": {
+        "jquery": "~1.9"
+    },
+    "keywords": [
+
+    ]
+}
