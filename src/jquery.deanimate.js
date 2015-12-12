@@ -32,7 +32,6 @@
 
         var cin, cout;
 
-
         if (clazz.indexOf('In') >= 0) {
             cin = clazz;
             cout = clazz.replace('In', 'Out');
@@ -62,10 +61,7 @@
 
                 var frontclass = $el.data("front");
                 var backclass = $el.data("back");
-
-                console.log(animateIn, frontclass, backclass);
-
-                var parallel = startsWith(classIn, 'rotate');
+                var parallel = $el.data("parallel");
 
                 if (animateIn) {
 
@@ -156,10 +152,12 @@
             if (!$el.data("deanimate:initiated")) { //Init animated DOM
                 $el.data("deanimate:initiated", true);
 
-                var settings = $.extend($.deAnimate.options, options);
-
-                var classIn = settings.in;
-                var classOut = settings.out;
+                var settings = $.extend({}, $.deAnimate.options, options),
+                    classIn = settings.classIn,
+                    classOut = settings.classOut,
+                    divs = $el,
+                    frontSelector,
+                    backSelector;
 
                 if (typeof classOut === 'undefined') {
 
@@ -169,30 +167,31 @@
                     classOut = pair.classOut;
                 }
 
+                $el.data("parallel", settings.parallel);
                 $el.data("classIn", classIn);
                 $el.data("classOut", classOut);
-                var divs = $el;
 
-                if (startsWith(classIn, 'flip') || startsWith(classIn, 'fade') || startsWith(classIn, 'rotate')) {
-
-                    var frontclass = $el.find('.de-animate-front').length > 0 ? '.de-animate-front' :
+                if (settings.front === 'auto') {
+                    frontSelector = $el.find('.de-animate-front').length > 0 ? '.de-animate-front' :
                         $el.find('.front').length > 0 ? '.front' : ':first-child';
-
-                    var backclass = $el.find('.de-animate-back').length > 0 ? '.de-animate-back' :
-                        $el.find('.back').length > 0 ? '.back' : ':nth-child(2)';
-
-                    $el.data("front", frontclass);
-                    $el.data("back", backclass);
-
-                    divs = $el.find(frontclass).add(backclass);
-
-                    $el.data("eventCount", 0);
-                    $el.find(backclass).css('display', 'none');
-
                 } else {
-
-                    divs = $el;
+                    frontSelector = settings.front;
                 }
+
+                if (settings.back === 'auto') {
+                    backSelector = $el.find('.de-animate-back').length > 0 ? '.de-animate-back' :
+                        $el.find('.back').length > 0 ? '.back' : ':nth-child(2)';
+                } else {
+                    backSelector = settings.back;
+                }
+
+                $el.data("front", frontSelector);
+                $el.data("back", backSelector);
+
+                divs = $el.find(frontSelector).add(backSelector);
+
+                $el.data("eventCount", 0);
+                $el.find(backSelector).css('display', 'none');
 
                 divs.addClass('animated');
 
@@ -252,8 +251,7 @@
         reverse: false,
         trigger: "click",
         speed: 500,
-        forceHeight: false,
-        forceWidth: false,
+        parallel: true,
         autoSize: true,
         front: 'auto',
         back: 'auto'

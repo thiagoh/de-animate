@@ -20,33 +20,52 @@
     .card {
         position: relative;
     }
-    
     .card .front,
     .card .back,
     .card .de-animate-front,
     .card .de-animate-back {
         position: absolute;
         width: 100%;
+        margin: 0 10px;
     }
     </style>
     <script type="text/javascript">
     function onload() {
 
         $('#card-1').deAnimate({
-            in: 'flipInX',
-            // in:'fadeInDown',
-            // out:'fadeOutDown'
+            classIn: 'flipInX',
+            parallel:false
         });
 
         $('#card-2').deAnimate({
-            in: 'flipInY',
-            // in:'fadeInDown',
-            // out:'fadeOutDown'
+            classIn: 'flipInY',
+            parallel:false
         });
 
         $('#card-3').deAnimate({
-            in:'rotateIn',
-            out:'rotateOut'
+            classIn: 'rotateIn',
+            classOut: 'rotateOut'
+        });
+
+        $('#card-4').deAnimate({
+            classIn: 'fadeIn',
+            parallel:false
+        });
+
+        $('#card-5').deAnimate({
+            classIn: 'fadeInDown'
+        });
+
+        $('#card-6').deAnimate({
+            classIn: 'fadeInDownBig'
+        });
+
+        $('#card-7').deAnimate({
+            classIn: 'fadeInLeft'
+        });
+
+        $('#card-8').deAnimate({
+            classIn: 'fadeInLeftBig'
         });
     }
     </script>
@@ -54,63 +73,163 @@
 
 <body onload="onload()">
     <div class="container">
-        <h1>Flip <small>click any of these components below</small></h1>
-        <div style="margin-top: 30px">
+        <h1>Flip/Rotate <small>click any of these components below</small></h1>
+        <div class="row" style="margin-top: 30px">
             <div id="card-1" class="card col-lg-3">
                 <div class="back panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Back of Panel title 1</h3>
+                        <h3 class="panel-title">Back of Panel flipInX</h3>
                     </div>
                     <div class="panel-body">
-                        Back of Panel content 1
+                        Back of Panel content Flipped X
                     </div>
                 </div>
                 <div class="front panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Front of Panel title 1</h3>
+                        <h3 class="panel-title">Front of Panel flipInX</h3>
                     </div>
                     <div class="panel-body">
-                        Front of Panel content 1
+                        Front of Panel content Flipped X
                     </div>
                 </div>
             </div>
             <div id="card-2" class="card col-lg-offset-1 col-lg-3">
                 <div class="de-animate-front panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Front of Panel title 2</h3>
+                        <h3 class="panel-title">Front of Panel flipInY</h3>
                     </div>
                     <div class="panel-body">
-                        Front of Panel content 2
+                        Front of Panel content Flipped Y
                     </div>
                 </div>
                 <div class="de-animate-back panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Back of Panel title 2</h3>
+                        <h3 class="panel-title">Back of Panel flipInY</h3>
                     </div>
                     <div class="panel-body">
-                        Back of Panel content 2
+                        Back of Panel content Flipped Y
                     </div>
                 </div>
             </div>
             <div id="card-3" class="card col-lg-offset-1 col-lg-3">
                 <div class="de-animate-front front panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Front of Panel title 3</h3>
+                        <h3 class="panel-title">Front of Panel rotateIn</h3>
                     </div>
                     <div class="panel-body">
-                        Front of Panel content 3
+                        Front of Panel content Rotated
                     </div>
                 </div>
                 <div class="de-animate-back back panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Back of Panel title 3</h3>
+                        <h3 class="panel-title">Back of Panel rotateIn</h3>
                     </div>
                     <div class="panel-body">
-                        Back of Panel content 3
+                        Back of Panel content Rotated
                     </div>
                 </div>
             </div>
         </div>
+
+        <h1>Fade <small>click any of these components below</small></h1>
+        <div class="row" style="margin-top: 30px">
+            <div id="card-4" class="card col-lg-3">
+                <div class="back panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Back of Panel fadeIn</h3>
+                    </div>
+                    <div class="panel-body">
+                        Back of Panel content fadeIn
+                    </div>
+                </div>
+                <div class="front panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Front of Panel fadeIn</h3>
+                    </div>
+                    <div class="panel-body">
+                        Front of Panel content fadeIn
+                    </div>
+                </div>
+            </div>
+            <div id="card-5" class="card col-lg-offset-1 col-lg-3">
+                <div class="de-animate-front panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Front of Panel fadeInDown</h3>
+                    </div>
+                    <div class="panel-body">
+                        Front of Panel content fadeInDown
+                    </div>
+                </div>
+                <div class="de-animate-back panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Back of Panel fadeInDown</h3>
+                    </div>
+                    <div class="panel-body">
+                        Back of Panel content fadeInDown
+                    </div>
+                </div>
+            </div>
+            <div id="card-6" class="card col-lg-offset-1 col-lg-3">
+                <div class="de-animate-front front panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Front of Panel fadeInDownBig</h3>
+                    </div>
+                    <div class="panel-body">
+                        Front of Panel content fadeInDownBig
+                    </div>
+                </div>
+                <div class="de-animate-back back panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Back of Panel fadeInDownBig</h3>
+                    </div>
+                    <div class="panel-body">
+                        Back of Panel content fadeInDownBig
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h1>Fade <small>click any of these components below</small></h1>
+        <div class="row" style="margin-top: 30px">
+            <div id="card-7" class="card col-lg-3">
+                <div class="back panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Back of Panel fadeInLeft</h3>
+                    </div>
+                    <div class="panel-body">
+                        Back of Panel content fadeInLeft
+                    </div>
+                </div>
+                <div class="front panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Front of Panel fadeInLeft</h3>
+                    </div>
+                    <div class="panel-body">
+                        Front of Panel content fadeInLeft
+                    </div>
+                </div>
+            </div>
+            <div id="card-8" class="card col-lg-offset-1 col-lg-3">
+                <div class="de-animate-front panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Front of Panel fadeInLeftBig</h3>
+                    </div>
+                    <div class="panel-body">
+                        Front of Panel content fadeInLeftBig
+                    </div>
+                </div>
+                <div class="de-animate-back panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Back of Panel fadeInLeftBig</h3>
+                    </div>
+                    <div class="panel-body">
+                        Back of Panel content fadeInLeftBig
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 
