@@ -28,56 +28,90 @@
         }
     };
 
+    var getAnimationPair = function(clazz) {
+
+        var cin, cout;
+
+
+        if (clazz.indexOf('In') >= 0) {
+            cin = clazz;
+            cout = clazz.replace('In', 'Out');
+        } else if (clazz.indexOf('Out') >= 0) {
+            cout = clazz;
+            cin = clazz.replace('Out', 'In');
+        } else {
+            cout = clazz;
+            cin = clazz;
+        }
+
+        return {
+            classIn: cin,
+            classOut: cout
+        };
+    };
+
     var whichAnimationEvent = getAnimationEvent();
 
     var _animate = function(animateIn, $el, callback) {
             $el.data('deanimate:animatedIn', animateIn);
 
-            var animation = $el.data("animation");
-            if (startsWith(animation, 'flip')) {
+            var classIn = $el.data("classIn"),
+                classOut = $el.data("classOut");
 
-                var classAnimationIn,
-                    classAnimationOut;
-
-                if (animation.indexOf('In') >= 0) {
-                    classAnimationIn = animation;
-                    classAnimationOut = animation.replace('In', 'Out');
-                } else if (animation.indexOf('Out') >= 0) {
-                    classAnimationOut = animation;
-                    classAnimationIn = animation.replace('Out', 'In');
-                } else {
-                    if (console) {
-                        console.warn('No such in out animations');
-                    }
-                }
+            if (startsWith(classIn, 'flip') || startsWith(classIn, 'fade') || startsWith(classIn, 'rotate')) {
 
                 var frontclass = $el.data("front");
                 var backclass = $el.data("back");
 
+                console.log(animateIn, frontclass, backclass);
+
+                var parallel = startsWith(classIn, 'rotate');
+
                 if (animateIn) {
 
-                    console.log(whichAnimationEvent);
-
                     $el.find(frontclass)
-                        .addClass(classAnimationOut)
-                        .removeClass(classAnimationIn)
-                        .one(whichAnimationEvent, function() {
+                        .addClass(classOut)
+                        .removeClass(classIn);
 
-                        });
-                    $el.find(backclass)
-                        .addClass(classAnimationIn)
-                        .removeClass(classAnimationOut);
+                    var outFunction = function() {
+                        if ($el.data("eventCount") <= 0) {
+                            $el.find(backclass).css('display', '');
+                        }
 
+                        $el.find(backclass)
+                            .addClass(classIn)
+                            .removeClass(classOut);
+                    };
+
+                    if (!parallel) {
+
+                        $el.one(whichAnimationEvent, outFunction);
+
+                    } else {
+
+                        outFunction();
+                    }
 
                 } else {
 
                     $el.find(backclass)
-                        .addClass(classAnimationOut)
-                        .removeClass(classAnimationIn)
-                        .one(whichAnimationEvent, function() {});
-                    $el.find(frontclass)
-                        .removeClass(classAnimationOut)
-                        .addClass(classAnimationIn);
+                        .addClass(classOut)
+                        .removeClass(classIn);
+
+                    var inFunction = function() {
+                        $el.find(frontclass)
+                            .removeClass(classOut)
+                            .addClass(classIn);
+                    };
+
+                    if (!parallel) {
+
+                        $el.one(whichAnimationEvent, inFunction);
+
+                    } else {
+
+                        inFunction();
+                    }
                 }
             }
 
@@ -124,27 +158,43 @@
 
                 var settings = $.extend($.deAnimate.options, options);
 
-                var animation = settings.animation;
+                var classIn = settings.in;
+                var classOut = settings.out;
+
+                if (typeof classOut === 'undefined') {
+
+                    var pair = getAnimationPair(classIn);
+
+                    classIn = pair.classIn;
+                    classOut = pair.classOut;
+                }
+
+                $el.data("classIn", classIn);
+                $el.data("classOut", classOut);
                 var divs = $el;
-                $el.data("animation", animation);
 
-                if (startsWith(animation, 'flip')) {
+                if (startsWith(classIn, 'flip') || startsWith(classIn, 'fade') || startsWith(classIn, 'rotate')) {
 
-                    var frontclass = $el.find('.deanimate-front').length > 0 ? '.deanimate-front' :
+                    var frontclass = $el.find('.de-animate-front').length > 0 ? '.de-animate-front' :
                         $el.find('.front').length > 0 ? '.front' : ':first-child';
 
-                    var backclass = $el.find('.deanimate-back').length > 0 ? '.deanimate-back' :
+                    var backclass = $el.find('.de-animate-back').length > 0 ? '.de-animate-back' :
                         $el.find('.back').length > 0 ? '.back' : ':nth-child(2)';
 
                     $el.data("front", frontclass);
                     $el.data("back", backclass);
 
                     divs = $el.find(frontclass).add(backclass);
+
+                    $el.data("eventCount", 0);
+                    $el.find(backclass).css('display', 'none');
+
+                } else {
+
+                    divs = $el;
                 }
 
-                if (!divs.hasClass('animated')) {
-                    divs.addClass('animated');
-                }
+                divs.addClass('animated');
 
                 if (settings.trigger.toLowerCase() === "click") {
                     $el.on($.fn.tap ? "tap" : "click", function(event) {

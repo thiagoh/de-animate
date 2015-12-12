@@ -17,12 +17,14 @@
     <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
     <script src="../src/jquery.deanimate.js"></script>
     <style type="text/css">
-    #card-1 {
+    .card {
         position: relative;
     }
     
-    #card-1 .front,
-    #card-1 .back {
+    .card .front,
+    .card .back,
+    .card .de-animate-front,
+    .card .de-animate-back {
         position: absolute;
         width: 100%;
     }
@@ -31,9 +33,20 @@
     function onload() {
 
         $('#card-1').deAnimate({
-            animation: 'flipInX',
+            in: 'flipInX',
             // in:'fadeInDown',
             // out:'fadeOutDown'
+        });
+
+        $('#card-2').deAnimate({
+            in: 'flipInY',
+            // in:'fadeInDown',
+            // out:'fadeOutDown'
+        });
+
+        $('#card-3').deAnimate({
+            in:'rotateIn',
+            out:'rotateOut'
         });
     }
     </script>
@@ -43,7 +56,7 @@
     <div class="container">
         <h1>Flip <small>click any of these components below</small></h1>
         <div style="margin-top: 30px">
-            <div id="card-1" class="col-lg-3">
+            <div id="card-1" class="card col-lg-3">
                 <div class="back panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Back of Panel title 1</h3>
@@ -61,8 +74,8 @@
                     </div>
                 </div>
             </div>
-            <div id="card-2" class="col-lg-offset-1 col-lg-3">
-                <div class="deanimate-front panel panel-default">
+            <div id="card-2" class="card col-lg-offset-1 col-lg-3">
+                <div class="de-animate-front panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Front of Panel title 2</h3>
                     </div>
@@ -70,7 +83,7 @@
                         Front of Panel content 2
                     </div>
                 </div>
-                <div class="deanimate-back panel panel-default">
+                <div class="de-animate-back panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Back of Panel title 2</h3>
                     </div>
@@ -79,8 +92,8 @@
                     </div>
                 </div>
             </div>
-            <div id="card-3" class="col-lg-offset-1 col-lg-3">
-                <div class="deanimate-front front panel panel-default">
+            <div id="card-3" class="card col-lg-offset-1 col-lg-3">
+                <div class="de-animate-front front panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Front of Panel title 3</h3>
                     </div>
@@ -88,7 +101,7 @@
                         Front of Panel content 3
                     </div>
                 </div>
-                <div class="deanimate-back back panel panel-default">
+                <div class="de-animate-back back panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Back of Panel title 3</h3>
                     </div>
