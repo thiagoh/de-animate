@@ -6,6 +6,52 @@
   }
 
   10% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    width: 10%;
+    -webkit-animation-timing-function: linear;
+  }
+
+  15% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
+    width: 15%;
+    -webkit-animation-timing-function: linear;
+  }
+
+  20% {
+    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 270deg);
+    width: 20%;
+    -webkit-animation-timing-function: linear;
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) ;
+    width: 30%;
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+  }
+
+  65% {
+    -webkit-transform: perspective(400px) ;
+    width: 65%;
+    -webkit-animation-timing-function: linear;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) ;
+    width: 100%;
+    -webkit-animation-timing-function: linear;
+    opacity: 0;
+  }
+}
+
+/*
+@-webkit-keyframes widget {
+ from {
+    -webkit-transform: perspective(400px);
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  10% {
     -webkit-transform: perspective(400px) scale3d(1, 1, 1) rotate3d(0, 1, 0, 90deg);
     -webkit-animation-timing-function: linear;
   }
@@ -76,6 +122,7 @@
     opacity: 0;
   }
 }
+*/
 
 @media (min-width: 800px) {
     .animated.widget {

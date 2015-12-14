@@ -55,12 +55,10 @@
             $el.data('deanimate:animatedIn', animateIn);
 
             var classIn = $el.data("classIn"),
-                classOut = $el.data("classOut");
-
-
-            var frontclass = $el.data("front");
-            var backclass = $el.data("back");
-            var parallel = $el.data("parallel");
+                classOut = $el.data("classOut"),
+                frontclass = $el.data("front"),
+                backclass = $el.data("back"),
+                parallel = $el.data("parallel");
 
             if (animateIn) {
 
@@ -69,7 +67,9 @@
                     .removeClass(classIn);
 
                 var outFunction = function() {
-                    if ($el.data("eventCount") <= 0) {
+                    var eventCount = $el.data("eventCount");
+                    if (eventCount <= 0) {
+                        $el.data("eventCount", eventCount++);
                         $el.find(backclass).css('display', '');
                     }
 
@@ -143,91 +143,116 @@
             callback = options;
         }
 
+        var $el = $(this);
+
+        if ($el.length === 1 && $el.data('deanimate:initiated') === true) {
+
+            if (options === 'animatedIn') {
+                return typeof $el.data('deanimate:animatedIn') === 'undefined' ? false : $el.data('deanimate:animatedIn');
+            } else if (options === 'animatedOut') {
+                return typeof $el.data('deanimate:animatedIn') === 'undefined' ? false : !$el.data('deanimate:animatedIn');
+            }
+        }
+
         return this.each(function() {
 
             var $el = $(this);
 
-            if (!$el.data("deanimate:initiated")) { //Init animated DOM
-                $el.data("deanimate:initiated", true);
+            if (options === 'toggle') {
 
-                var settings = $.extend({}, $.deAnimate.options, options),
-                    classIn = settings.classIn,
-                    classOut = settings.classOut,
-                    divs = $el,
-                    frontSelector,
-                    backSelector;
-
-                if (typeof classOut === 'undefined') {
-
-                    var pair = getAnimationPair(classIn);
-
-                    classIn = pair.classIn;
-                    classOut = pair.classOut;
-                }
-
-                $el.data("parallel", settings.parallel);
-                $el.data("classIn", classIn);
-                $el.data("classOut", classOut);
-
-                if (settings.front === 'auto') {
-                    frontSelector = $el.find('.de-animate-front').length > 0 ? '.de-animate-front' :
-                        $el.find('.front').length > 0 ? '.front' : ':first-child';
+                if ($el.data('deanimate:animatedIn')) {
+                    _animate(false, $el, callback);
                 } else {
-                    frontSelector = settings.front;
+                    _animate(true, $el, callback);
                 }
 
-                if (settings.back === 'auto') {
-                    backSelector = $el.find('.de-animate-back').length > 0 ? '.de-animate-back' :
-                        $el.find('.back').length > 0 ? '.back' : ':nth-child(2)';
-                } else {
-                    backSelector = settings.back;
-                }
+            } else if ($el.data('deanimate:initiated') !== true) {
 
-                $el.data("front", frontSelector);
-                $el.data("back", backSelector);
+                if (!$el.data("deanimate:initiated")) { //Init animated DOM
+                    $el.data("deanimate:initiated", true);
 
-                divs = $el.find(frontSelector).add(backSelector);
+                    var settings = $.extend({}, $.deAnimate.options, options),
+                        classIn = settings.classIn,
+                        classOut = settings.classOut,
+                        divs = $el,
+                        frontSelector,
+                        backSelector;
 
-                $el.data("eventCount", 0);
-                $el.find(backSelector).css('display', 'none');
+                    if (typeof classOut === 'undefined') {
 
-                divs.addClass('animated');
+                        var pair = getAnimationPair(classIn);
 
-                if (settings.trigger.toLowerCase() === "click") {
-                    $el.on($.fn.tap ? "tap" : "click", function(event) {
-                        if (!event) {
-                            event = window.event;
-                        }
-                        if ($el.find($(event.target).closest('button, a, input[type="submit"]')).length) {
-                            return;
-                        }
+                        classIn = pair.classIn;
+                        classOut = pair.classOut;
+                    }
 
-                        if ($el.data('deanimate:animatedIn')) {
-                            _animate(false, $el, callback);
-                        } else {
-                            _animate(true, $el, callback);
-                        }
-                    });
-                } else if (settings.trigger.toLowerCase() === "hover") {
-                    var performAnimation = function() {
-                        $el.unbind('mouseleave', performDeanimation);
+                    $el.data("parallel", settings.parallel);
+                    $el.data("classIn", classIn);
+                    $el.data("classOut", classOut);
 
-                        _animate(true, $el, callback);
+                    if (settings.front === 'auto') {
+                        frontSelector = $el.find('.de-animate-front').length > 0 ? '.de-animate-front' :
+                            $el.find('.front').length > 0 ? '.front' : ':first-child';
+                    } else {
+                        frontSelector = settings.front;
+                    }
 
-                        setTimeout(function() {
-                            $el.bind('mouseleave', performDeanimation);
-                            if (!$el.is(":hover")) {
+                    if (settings.back === 'auto') {
+                        backSelector = $el.find('.de-animate-back').length > 0 ? '.de-animate-back' :
+                            $el.find('.back').length > 0 ? '.back' : ':nth-child(2)';
+                    } else {
+                        backSelector = settings.back;
+                    }
+
+                    $el.data("front", frontSelector);
+                    $el.data("back", backSelector);
+
+                    divs = $el.find(frontSelector).add(backSelector);
+
+                    $el.data("eventCount", 0);
+                    $el.find(backSelector).css('display', 'none');
+
+                    divs.addClass('animated');
+
+                    if (typeof settings.trigger === 'string') {
+
+                        if (settings.trigger.toLowerCase() === "click") {
+                            $el.on($.fn.tap ? "tap" : "click", function(event) {
+                                if (!event) {
+                                    event = window.event;
+                                }
+                                if ($el.find($(event.target).closest('button, a, input[type="submit"]')).length) {
+                                    return;
+                                }
+
+                                if ($el.data('deanimate:animatedIn')) {
+                                    _animate(false, $el, callback);
+                                } else {
+                                    _animate(true, $el, callback);
+                                }
+                            });
+                        } else if (settings.trigger.toLowerCase() === "hover") {
+                            var performAnimation = function() {
+                                $el.unbind('mouseleave', performDeanimation);
+
+                                _animate(true, $el, callback);
+
+                                setTimeout(function() {
+                                    $el.bind('mouseleave', performDeanimation);
+                                    if (!$el.is(":hover")) {
+                                        _animate(false, $el, callback);
+                                    }
+                                }, (settings.speed + 150));
+                            };
+
+                            var performDeanimation = function() {
                                 _animate(false, $el, callback);
-                            }
-                        }, (settings.speed + 150));
-                    };
+                            };
 
-                    var performDeanimation = function() {
-                        _animate(false, $el, callback);
-                    };
-
-                    $el.mouseenter(performAnimation);
-                    $el.mouseleave(performDeanimation);
+                            $el.mouseenter(performAnimation);
+                            $el.mouseleave(performDeanimation);
+                        }
+                    }
                 }
             }
 
@@ -245,7 +270,6 @@
 
     // Static method default options.
     $.deAnimate.options = {
-        trigger: "click",
         speed: 500,
         parallel: true,
         front: 'auto',
