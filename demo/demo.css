@@ -1,0 +1,12 @@
+.card {
+    position: relative;
+    height: 120px;
+}
+.card .front,
+.card .back,
+.card .de-animate-front,
+.card .de-animate-back {
+    position: absolute;
+    margin: 0 10px;
+    width: 280px;
+}

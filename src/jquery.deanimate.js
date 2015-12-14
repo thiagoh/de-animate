@@ -57,57 +57,55 @@
             var classIn = $el.data("classIn"),
                 classOut = $el.data("classOut");
 
-            if (startsWith(classIn, 'flip') || startsWith(classIn, 'fade') || startsWith(classIn, 'rotate')) {
 
-                var frontclass = $el.data("front");
-                var backclass = $el.data("back");
-                var parallel = $el.data("parallel");
+            var frontclass = $el.data("front");
+            var backclass = $el.data("back");
+            var parallel = $el.data("parallel");
 
-                if (animateIn) {
+            if (animateIn) {
 
-                    $el.find(frontclass)
-                        .addClass(classOut)
-                        .removeClass(classIn);
+                $el.find(frontclass)
+                    .addClass(classOut)
+                    .removeClass(classIn);
 
-                    var outFunction = function() {
-                        if ($el.data("eventCount") <= 0) {
-                            $el.find(backclass).css('display', '');
-                        }
-
-                        $el.find(backclass)
-                            .addClass(classIn)
-                            .removeClass(classOut);
-                    };
-
-                    if (!parallel) {
-
-                        $el.one(whichAnimationEvent, outFunction);
-
-                    } else {
-
-                        outFunction();
+                var outFunction = function() {
+                    if ($el.data("eventCount") <= 0) {
+                        $el.find(backclass).css('display', '');
                     }
+
+                    $el.find(backclass)
+                        .addClass(classIn)
+                        .removeClass(classOut);
+                };
+
+                if (!parallel) {
+
+                    $el.one(whichAnimationEvent, outFunction);
 
                 } else {
 
-                    $el.find(backclass)
-                        .addClass(classOut)
-                        .removeClass(classIn);
+                    outFunction();
+                }
 
-                    var inFunction = function() {
-                        $el.find(frontclass)
-                            .removeClass(classOut)
-                            .addClass(classIn);
-                    };
+            } else {
 
-                    if (!parallel) {
+                $el.find(backclass)
+                    .addClass(classOut)
+                    .removeClass(classIn);
 
-                        $el.one(whichAnimationEvent, inFunction);
+                var inFunction = function() {
+                    $el.find(frontclass)
+                        .removeClass(classOut)
+                        .addClass(classIn);
+                };
 
-                    } else {
+                if (!parallel) {
 
-                        inFunction();
-                    }
+                    $el.one(whichAnimationEvent, inFunction);
+
+                } else {
+
+                    inFunction();
                 }
             }
 
@@ -247,12 +245,9 @@
 
     // Static method default options.
     $.deAnimate.options = {
-        axis: "y",
-        reverse: false,
         trigger: "click",
         speed: 500,
         parallel: true,
-        autoSize: true,
         front: 'auto',
         back: 'auto'
     };
