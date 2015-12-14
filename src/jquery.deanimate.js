@@ -30,7 +30,8 @@
 
     var getAnimationPair = function(clazz) {
 
-        var cin, cout;
+        var cin = clazz,
+            cout = clazz;
 
         if (clazz.indexOf('In') >= 0) {
             cin = clazz;
@@ -38,9 +39,6 @@
         } else if (clazz.indexOf('Out') >= 0) {
             cout = clazz;
             cin = clazz.replace('Out', 'In');
-        } else {
-            cout = clazz;
-            cin = clazz;
         }
 
         return {
@@ -54,11 +52,11 @@
     var _animate = function(animateIn, $el, callback) {
             $el.data('deanimate:animatedIn', animateIn);
 
-            var classIn = $el.data("classIn"),
-                classOut = $el.data("classOut"),
-                frontclass = $el.data("front"),
-                backclass = $el.data("back"),
-                parallel = $el.data("parallel");
+            var classIn = $el.data("deanimate:classIn"),
+                classOut = $el.data("deanimate:classOut"),
+                frontclass = $el.data("deanimate:front"),
+                backclass = $el.data("deanimate:back"),
+                parallel = $el.data("deanimate:parallel");
 
             if (animateIn) {
 
@@ -67,9 +65,9 @@
                     .removeClass(classIn);
 
                 var outFunction = function() {
-                    var eventCount = $el.data("eventCount");
+                    var eventCount = $el.data("deanimate:eventCount");
                     if (eventCount <= 0) {
-                        $el.data("eventCount", eventCount++);
+                        $el.data("deanimate:eventCount", eventCount++);
                         $el.find(backclass).css('display', '');
                     }
 
@@ -113,7 +111,7 @@
 
                 //Providing a nicely wrapped up callback because transform is essentially async
                 $el.one(whichAnimationEvent, function() {
-                    $(this).trigger('deanimate:animated-in');
+                    $(this).trigger('deanimate:animatedIn');
                     $(this).trigger('deanimate:animated');
                     if (callback !== undefined) {
                         callback.call(this);
@@ -124,7 +122,7 @@
 
                 //Providing a nicely wrapped up callback because transform is essentially async
                 $el.one(whichAnimationEvent, function() {
-                    $(this).trigger('deanimate:animated-out');
+                    $(this).trigger('deanimate:animatedOut');
                     $(this).trigger('deanimate:animated');
                     if (callback !== undefined) {
                         callback.call(this);
@@ -160,11 +158,27 @@
 
             if (options === 'toggle') {
 
+                callback = callback || $el.data('deanimate:callback');
+
                 if ($el.data('deanimate:animatedIn')) {
                     _animate(false, $el, callback);
                 } else {
                     _animate(true, $el, callback);
                 }
+
+            } else if (options === 'destroy') {
+
+                $el.removeData('deanimate:initiated');
+                $el.removeData('deanimate:eventCount');
+                $el.removeData('deanimate:back');
+                $el.removeData('deanimate:front');
+                $el.removeData('deanimate:animatedIn');
+                $el.removeData('deanimate:classIn');
+                $el.removeData('deanimate:classOut');
+                $el.removeData('deanimate:callback');
+                $el.removeData('deanimate:parallel');
+                $el.off('click.deanimate');
+                $el.off('tap.deanimate');
 
             } else if ($el.data('deanimate:initiated') !== true) {
 
@@ -186,9 +200,10 @@
                         classOut = pair.classOut;
                     }
 
-                    $el.data("parallel", settings.parallel);
-                    $el.data("classIn", classIn);
-                    $el.data("classOut", classOut);
+                    $el.data("deanimate:parallel", settings.parallel);
+                    $el.data("deanimate:classIn", classIn);
+                    $el.data("deanimate:classOut", classOut);
+                    $el.data("deanimate:callback", callback);
 
                     if (settings.front === 'auto') {
                         frontSelector = $el.find('.de-animate-front').length > 0 ? '.de-animate-front' :
@@ -204,20 +219,23 @@
                         backSelector = settings.back;
                     }
 
-                    $el.data("front", frontSelector);
-                    $el.data("back", backSelector);
+                    $el.data("deanimate:front", frontSelector);
+                    $el.data("deanimate:back", backSelector);
 
                     divs = $el.find(frontSelector).add(backSelector);
 
-                    $el.data("eventCount", 0);
+                    $el.data("deanimate:eventCount", 0);
                     $el.find(backSelector).css('display', 'none');
 
                     divs.addClass('animated');
 
+                    var speedInSec = settings.speed / 1000 || 0.5;
+                    divs.css('animation-duration', speedInSec + 's');
+
                     if (typeof settings.trigger === 'string') {
 
                         if (settings.trigger.toLowerCase() === "click") {
-                            $el.on($.fn.tap ? "tap" : "click", function(event) {
+                            $el.on($.fn.tap ? "tap.deanimate" : "click.deanimate", function(event) {
                                 if (!event) {
                                     event = window.event;
                                 }

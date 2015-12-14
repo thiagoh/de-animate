@@ -24,9 +24,14 @@
         $('#card-1').deAnimate({
             classIn: 'fadeIn',
             classOut: 'widget',
-            parallel:false
+            speed: 1000,
+            parallel: false
         }, function() {
             console.log('callback!');
+        });
+
+        $('#card-1').on('click', function() {
+            $(this).deAnimate('toggle');
         });
     }
     </script>
