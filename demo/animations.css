@@ -6,41 +6,6 @@
   }
 
   10% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
-    -webkit-animation-timing-function: linear;
-  }
-
-  20% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 180deg);
-    -webkit-animation-timing-function: linear;
-  }
-
-  30% {
-    -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 270deg);
-    -webkit-animation-timing-function: linear;
-    opacity: 1;
-  }
-
-  65% {
-    -webkit-transform: perspective(400px) ;
-    -webkit-animation-timing-function: linear;
-  }
-
-  100% {
-    -webkit-transform: perspective(400px) ;
-    -webkit-animation-timing-function: linear;
-    opacity: 0;
-  }
-}
-
-/*
-@-webkit-keyframes widget {
- from {
-    -webkit-transform: perspective(400px);
-    -webkit-animation-timing-function: ease-in;
-  }
-
-  10% {
     -webkit-transform: perspective(400px) scale3d(1, 1, 1) rotate3d(0, 1, 0, 90deg);
     -webkit-animation-timing-function: linear;
   }
@@ -111,7 +76,6 @@
     opacity: 0;
   }
 }
-*/
 
 @media (min-width: 800px) {
     .animated.widget {

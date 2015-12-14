@@ -11,22 +11,37 @@
 
     // Function from David Walsh: http://davidwalsh.name/css-animation-callback licensed with http://opensource.org/licenses/MIT
     var getAnimationEvent = function() {
-        var t,
-            el = document.createElement("fakeelement"),
-            transitions = {
-                'WebkitTransition': 'webkitAnimationEnd',
-                'MozTransition': 'mozAnimationEnd',
-                'MSTransition': 'MSAnimationEnd',
-                'OTransition': 'oanimationend',
-                'transition': 'animationend'
-            };
+            var t,
+                el = document.createElement("fakeelement"),
+                animations = {
+                    'WebkitAnimation': 'webkitAnimationEnd',
+                    'OAnimation': 'oAnimationEnd',
+                    'msAnimation': 'MSAnimationEnd',
+                    'animation': 'animationend'
+                };
 
-        for (t in transitions) {
-            if (el.style[t] !== undefined) {
-                return transitions[t];
+            for (t in animations) {
+                if (el.style[t] !== undefined) {
+                    return animations[t];
+                }
             }
-        }
-    };
+        },
+        getTransitionEvent = function() {
+            var t,
+                el = document.createElement("fakeelement"),
+                transitions = {
+                    'WebkitTransition': 'webkitTransitionEnd',
+                    'OTransition': 'oTransitionEnd',
+                    'msTransition': 'MSTransitionEnd',
+                    'transition': 'transitionend'
+                };
+
+            for (t in transitions) {
+                if (el.style[t] !== undefined) {
+                    return transitions[t];
+                }
+            }
+        };
 
     var getAnimationPair = function(clazz) {
 
@@ -47,7 +62,7 @@
         };
     };
 
-    var whichAnimationEvent = getAnimationEvent();
+    var whichEvent = getAnimationEvent() + ' ' + getTransitionEvent();
 
     var _animate = function(animateIn, $el, callback) {
             $el.data('deanimate:animatedIn', animateIn);
@@ -78,7 +93,7 @@
 
                 if (!parallel) {
 
-                    $el.one(whichAnimationEvent, outFunction);
+                    $el.one(whichEvent, outFunction);
 
                 } else {
 
@@ -99,7 +114,7 @@
 
                 if (!parallel) {
 
-                    $el.one(whichAnimationEvent, inFunction);
+                    $el.one(whichEvent, inFunction);
 
                 } else {
 
@@ -110,7 +125,7 @@
             if (animateIn) {
 
                 //Providing a nicely wrapped up callback because transform is essentially async
-                $el.one(whichAnimationEvent, function() {
+                $el.one(whichEvent, function() {
                     $(this).trigger('deanimate:animatedIn');
                     $(this).trigger('deanimate:animated');
                     if (callback !== undefined) {
@@ -121,7 +136,7 @@
             } else {
 
                 //Providing a nicely wrapped up callback because transform is essentially async
-                $el.one(whichAnimationEvent, function() {
+                $el.one(whichEvent, function() {
                     $(this).trigger('deanimate:animatedOut');
                     $(this).trigger('deanimate:animated');
                     if (callback !== undefined) {
