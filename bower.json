@@ -1,0 +1,36 @@
+{
+  "name": "de-animate",
+  "description": "animation plugin for jQuery",
+  "main": "src/jquery.deanimate.js",
+  "authors": [
+    "Thiago Andrade <thiagoh@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "animate",
+    "animation",
+    "deanimate",
+    "de-animate",
+    "transition",
+    "timing",
+    "delay",
+    "fade",
+    "slide",
+    "width",
+    "height",
+    "flip",
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ],
+  "homepage": "https://github.com/thiagoh/de-animate",
+  "moduleType": [
+    "globals"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

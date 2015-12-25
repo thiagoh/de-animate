@@ -1,6 +1,18 @@
 {
-  "name": "jquery-plugin",
-  "version": "0.0.0-ignored",
+  "name": "de-animate",
+  "version": "0.2.0",
+  "homepage": "https://github.com/thiagoh/de-animate",
+  "author": {
+    "name": "Thiago Andrade",
+    "email": "thiagoh@gmail.com",
+    "url": "https://about.me/thiagoh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thiagoh/de-animate"
+  },
+  "bugs": "https://github.com/thiagoh/de-animate/issues",
+  "license": "MIT",
   "engines": {
     "node": ">= 0.8.0"
   },
