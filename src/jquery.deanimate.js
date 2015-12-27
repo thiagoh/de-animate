@@ -242,7 +242,7 @@
                     $el.data("deanimate:eventCount", 0);
                     $el.find(backSelector).css('display', 'none');
 
-                    //divs.addClass('animated');
+                    divs.addClass('animated');
 
                     var speedInSec = settings.speed / 1000 || 0.5;
                     divs.css('animation-duration', speedInSec + 's');
