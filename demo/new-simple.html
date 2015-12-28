@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>DeAnimate - Simple</title>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-indigo.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" crossorigin="anonymous" />
+
+  <style>
+  .card {
+    position: relative;
+  }
+  .card .front,
+  .card .back {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .card .mdl-card {
+    width: 100%;
+    height: 320px;
+  }
+  .card .avatar {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    border-radius: 50%;
+  }
+  .card .front .mdl-card__title,
+  .card .back .mdl-card__title {
+    color: #fff;
+  }
+  .card .front .mdl-card__title {
+    background-color: rgb(244,67,54);
+  }
+  .card .back .mdl-card__title {
+    background-color: rgb(63, 81, 181);
+  }
+  .card .mdl-button {
+    transition: none !important;
+  }
+
+  /*default*/
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .container .mdl-cell-custom {
+    height: 320px;
+  }
+  </style>
+
+
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="../src/jquery.deanimate.js"></script>
+
+  <script>
+  function onload() {
+    $('#card-1').deAnimate({
+      trigger: 'click',
+      classIn: 'flipInY',
+      parallel: false
+    });
+
+    $('#card-2').deAnimate({
+      trigger: 'click',
+      classIn: 'flipInX',
+      parallel: false
+    });
+
+    $('#card-3').deAnimate({
+      trigger: 'click',
+      classIn: 'rotateIn',
+      parallel: false
+    });
+    $('#card-4').deAnimate({
+      trigger: 'click',
+      classIn: 'fadeIn',
+      parallel: false
+    });
+
+    $('#card-5').deAnimate({
+      trigger: 'click',
+      classIn: 'fadeInDown',
+      parallel: false
+    });
+
+    $('#card-6').deAnimate({
+      trigger: 'click',
+      classIn: 'fadeInDownBig',
+      parallel: false
+    });
+  }
+  </script>
+
+</head>
+<body onload="onload()">
+
+  <div class="mdl-grid container">
+
+    <!-- Flip / Rotate -->
+
+    <div class="mdl-cell mdl-cell--12-col">
+      <h3>Flip / Rotate <small>click any of these components below</small></h3>
+    </div>
+
+    <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+      <div id="card-1" class="card animated">
+
+        <div class="back demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FlipInX.png" alt="" />
+            <h2 class="mdl-card__title-text">Back FlipInX</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Back of Panel content Flipped X
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+        <div class="front demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FlipOutX.png" alt="" />
+            <h2 class="mdl-card__title-text">Front FlipInX</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Front of Panel content Flipped X
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+      <div id="card-2" class="card animated">
+
+        <div class="back demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FlipInY.png" alt="" />
+            <h2 class="mdl-card__title-text">Back FlipInY</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Back of Panel content Flipped Y
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+        <div class="front demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FlipOutY.png" alt="" />
+            <h2 class="mdl-card__title-text">Front FlipInY</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Front of Panel content Flipped Y
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+      <div id="card-3" class="card animated">
+
+        <div class="back demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/rotateIn.png" alt="" />
+            <h2 class="mdl-card__title-text">Back RotateIn</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Back of Panel content Rotate
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+        <div class="front demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/rotateOut.png" alt="" />
+            <h2 class="mdl-card__title-text">Front RotateIn</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Front of Panel content Rotate
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Fade -->
+
+    <div class="mdl-cell mdl-cell--12-col">
+      <h3>Fade <small>click any of these components below</small></h3>
+    </div>
+
+    <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+      <div id="card-4" class="card animated">
+
+        <div class="back demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FadeIn.png" alt="" />
+            <h2 class="mdl-card__title-text">Back FadeIn</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Back of Panel content Fade In
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+        <div class="front demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FadeOut.png" alt="" />
+            <h2 class="mdl-card__title-text">Front FadeIn</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Front of Panel content Fade In
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+      <div id="card-5" class="card animated">
+
+        <div class="back demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FadeInDown.png" alt="" />
+            <h2 class="mdl-card__title-text">Back FadeInDown</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Back of Panel content Fade In Down
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+        <div class="front demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FadeOutDown.png" alt="" />
+            <h2 class="mdl-card__title-text">Front FadeInDown</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Front of Panel content Fade In Down
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+      <div id="card-6" class="card animated">
+
+        <div class="back demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FadeInDownBig.png" alt="" />
+            <h2 class="mdl-card__title-text">Back FadeInDownBig</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Back of Panel content Fade In Down Big
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+        <div class="front demo-card-square mdl-card mdl-shadow--2dp">
+          <div class="mdl-card__title mdl-card--expand">
+            <img class="avatar" src="http://api.adorable.io/avatars/136/FadeOutDownBig.png" alt="" />
+            <h2 class="mdl-card__title-text">Front FadeInDownBig</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            Front of Panel content Fade In Down Big
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <div class="mdl-button mdl-button--colored">
+              toggle card
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
