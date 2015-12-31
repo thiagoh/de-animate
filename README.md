@@ -139,4 +139,5 @@ Animate.css has a lot of animations and you can check all of them at [animate.cs
 * `slideOutUp`
 
 ## Release History
-* 0.1.0 First release (beta)
+* v0.2.2 Release Candidate
+* v0.1.0 First release (beta)
