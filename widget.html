@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>DeAnimate Demo</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="demo.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- Load local jQuery. This can be overridden with a ?jquery=___ param. -->
+    <script src="../src/jquery.deanimate.js"></script>
+    <script type="text/javascript">
+    function onload() {
+
+        $('#card-1').deAnimate({
+            classIn: 'fadeIn',
+            classOut: 'widget',
+            speed: 750,
+            parallel: false
+        });
+
+        $('#card-1').on('click', function() {
+            $(this).deAnimate('toggle');
+        });
+    }
+    </script>
+</head>
+
+<body onload="onload()">
+    <div class="container">
+        <h1>Widget <small>click any of these components below</small></h1>
+        <div class="row" style="margin-top: 30px">
+            <div id="card-1" class="card animated col-xs-12 col-lg-3">
+                <div class="front panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Front of Panel Widget</h3>
+                    </div>
+                    <div class="panel-body">
+                        Front of Panel content Widget
+                    </div>
+                </div>
+                <div class="back panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Back of Panel Widget</h3>
+                    </div>
+                    <div class="panel-body">
+                        Back of Panel content Widget
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

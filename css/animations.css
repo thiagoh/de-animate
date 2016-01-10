@@ -1,0 +1,96 @@
+
+@-webkit-keyframes widget {
+ from {
+    -webkit-transform: perspective(400px);
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  10% {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: linear;
+  }
+
+  15% {
+    -webkit-transform: perspective(400px) scale3d(1.5, 1.5, 1.5) rotate3d(0, 1, 0, 180deg);
+    -webkit-animation-timing-function: linear;
+  }
+
+  20% {
+    -webkit-transform: perspective(400px) scale3d(1.8, 1.8, 1.8) rotate3d(0, 1, 0, 270deg);
+    -webkit-animation-timing-function: linear;
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) scale3d(2.6, 2.6, 2.6);
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+  }
+
+  65% {
+    -webkit-transform: perspective(400px) scale3d(4.5, 4.5, 4.5);
+    -webkit-animation-timing-function: linear;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) scale3d(6, 6, 6);
+    -webkit-animation-timing-function: linear;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes widget-mobile {
+ from {
+    -webkit-transform: perspective(400px);
+    -webkit-animation-timing-function: ease-in;
+  }
+
+  10% {
+    -webkit-transform: perspective(400px) scale3d(1, 1, 1) rotate3d(0, 1, 0, 90deg);
+    -webkit-animation-timing-function: linear;
+  }
+
+  15% {
+    -webkit-transform: perspective(400px) scale3d(1.3, 1.3, 1.3) rotate3d(0, 1, 0, 180deg);
+    -webkit-animation-timing-function: linear;
+  }
+
+  20% {
+    -webkit-transform: perspective(400px) scale3d(1.6, 1.6, 1.6) rotate3d(0, 1, 0, 270deg);
+    -webkit-animation-timing-function: linear;
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) scale3d(2, 2, 2);
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+  }
+
+  65% {
+    -webkit-transform: perspective(400px) scale3d(2.5, 2.5, 2.5);
+    -webkit-animation-timing-function: linear;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) scale3d(3, 3, 3);
+    -webkit-animation-timing-function: linear;
+    opacity: 0;
+  }
+}
+
+@media (min-width: 800px) {
+    .animated.widget {
+        -webkit-animation-name: widget;
+        animation-name: widget;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+    }
+}
+
+@media (max-width: 800px) {
+    .animated.widget {
+        -webkit-animation-name: widget-mobile;
+        animation-name: widget-mobile;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+    }
+}
