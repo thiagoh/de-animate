@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>DeAnimate - Simple</title>
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-indigo.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+  <!-- Always shows a header, even in smaller screens. -->
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+    <header class="mdl-layout__header header-white">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">DeAnimate <small>A jQuery lightweight plugin for Animation</small></span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="#flipRotate">Flip / Rotate</a>
+          <a class="mdl-navigation__link" href="#fade">Fade</a>
+          <a class="mdl-navigation__link" href="#zoom">Zoom</a>
+          <a class="mdl-navigation__link" href="#bounce">Bounce</a>
+          <a class="mdl-navigation__link" href="#others">Others</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="mdl-layout__content">
+      <div class="page-content">
+
+        <div class="mdl-grid container">
+
+          <!-- Flip / Rotate -->
+
+          <div id="flipRotate" class="mdl-cell mdl-cell--12-col">
+            <h3>Flip / Rotate <small>click any of these components below</small></h3>
+          </div>
+
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-1" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FlipInX.png" alt="" />
+                  <span class="card-title">Back FlipInX</span>
+                </div>
+                <p>Back of Panel content Flipped X</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FlipOutX.png" alt="" />
+                  <span class="card-title">Front FlipInX</span>
+                </div>
+                <p>Front of Panel content Flipped X</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-3" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/rotateIn.png" alt="" />
+                  <span class="card-title">Back RotateIn</span>
+                </div>
+                <p>Back of Panel content Rotate</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/rotateOut.png" alt="" />
+                  <span class="card-title">Front RotateIn</span>
+                </div>
+                <p>Front of Panel content Rotate</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Fade -->
+
+          <div id="fade" class="mdl-cell mdl-cell--12-col">
+            <h3>Fade <small>click any of these components below</small></h3>
+          </div>
+
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-4" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeIn.png" alt="" />
+                  <span class="card-title">Back FadeIn</span>
+                </div>
+                <p>Back of Panel content Fade In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOut.png" alt="" />
+                  <span class="card-title">Front FadeIn</span>
+                </div>
+                <p>Front of Panel content Fade In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-5" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInDown.png" alt="" />
+                  <span class="card-title">Back FadeInDown</span>
+                </div>
+                <p>Back of Panel content Fade In Down</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutDown.png" alt="" />
+                  <span class="card-title">Front FadeInDown</span>
+                </div>
+                <p>Front of Panel content Fade In Down</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-6" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInDownBig.png" alt="" />
+                  <span class="card-title">Back FadeInDownBig</span>
+                </div>
+                <p>Back of Panel content Fade In Down Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutDownBig.png" alt="" />
+                  <span class="card-title">Front FadeInDownBig</span>
+                </div>
+                <p>Front of Panel content Fade In Down Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-7" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInLeft.png" alt="" />
+                  <span class="card-title">Back FadeInLeft</span>
+                </div>
+                <p>Back of Panel content Fade In Left</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutLeft.png" alt="" />
+                  <span class="card-title">Front FadeInLeft</span>
+                </div>
+                <p>Front of Panel content Fade In Left</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-8" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInLeftBig.png" alt="" />
+                  <span class="card-title">Back FadeInLeftBig</span>
+                </div>
+                <p>Back of Panel content Fade In Left Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutLeftBig.png" alt="" />
+                  <span class="card-title">Front FadeInLeftBig</span>
+                </div>
+                <p>Front of Panel content Fade In Left Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-9" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInRight.png" alt="" />
+                  <span class="card-title">Back FadeInRight</span>
+                </div>
+                <p>Back of Panel content Fade In Right</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutRight.png" alt="" />
+                  <span class="card-title">Front FadeInRight</span>
+                </div>
+                <p>Front of Panel content Fade In Right</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-10" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInRightBig.png" alt="" />
+                  <span class="card-title">Back FadeInRightBig</span>
+                </div>
+                <p>Back of Panel content Fade In Right Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutRightBig.png" alt="" />
+                  <span class="card-title">Front FadeInRightBig</span>
+                </div>
+                <p>Front of Panel content Fade In Right Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-11" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInUp.png" alt="" />
+                  <span class="card-title">Back FadeInUp</span>
+                </div>
+                <p>Back of Panel content Fade In Up</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutUp.png" alt="" />
+                  <span class="card-title">Front FadeInUp</span>
+                </div>
+                <p>Front of Panel content Fade In Up</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-12" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeInUpBig.png" alt="" />
+                  <span class="card-title">Back FadeInUpBig</span>
+                </div>
+                <p>Back of Panel content Fade In Up Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/FadeOutUpBig.png" alt="" />
+                  <span class="card-title">Front FadeInUpBig</span>
+                </div>
+                <p>Front of Panel content Fade In Up Big</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Zoom -->
+
+          <div id="zoom" class="mdl-cell mdl-cell--12-col">
+            <h3>Zoom <small>click any of these components below</small></h3>
+          </div>
+
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-13" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomIn.png" alt="" />
+                  <span class="card-title">Back ZoomIn</span>
+                </div>
+                <p>Back of Panel content Zoom In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomOut.png" alt="" />
+                  <span class="card-title">Front ZoomIn</span>
+                </div>
+                <p>Front of Panel content Zoom In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-14" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomInLeft.png" alt="" />
+                  <span class="card-title">Back ZoomInLeft</span>
+                </div>
+                <p>Back of Panel content Zoom In Left</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomOutLeft.png" alt="" />
+                  <span class="card-title">Front ZoomInLeft</span>
+                </div>
+                <p>Front of Panel content Zoom In Left</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-15" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomInRight.png" alt="" />
+                  <span class="card-title">Back ZoomInRight</span>
+                </div>
+                <p>Back of Panel content Zoom In Right</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomOutRight.png" alt="" />
+                  <span class="card-title">Front ZoomInRight</span>
+                </div>
+                <p>Front of Panel content Zoom In Right</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-16" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomInDown.png" alt="" />
+                  <span class="card-title">Back ZoomInDown</span>
+                </div>
+                <p>Back of Panel content Zoom In Down</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomOutDown.png" alt="" />
+                  <span class="card-title">Front ZoomInDown</span>
+                </div>
+                <p>Front of Panel content Zoom In Down</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-17" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomInUp.png" alt="" />
+                  <span class="card-title">Back ZoomInUp</span>
+                </div>
+                <p>Back of Panel content Zoom In Up</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/ZoomOutUp.png" alt="" />
+                  <span class="card-title">Front ZoomInUp</span>
+                </div>
+                <p>Front of Panel content Zoom In Up</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Bounce -->
+
+          <div id="bounce" class="mdl-cell mdl-cell--12-col">
+            <h3>Bounce <small>click any of these components below</small></h3>
+          </div>
+
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-18" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceIn.png" alt="" />
+                  <span class="card-title">Back BounceIn</span>
+                </div>
+                <p>Back of Panel content Bounce In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceOut.png" alt="" />
+                  <span class="card-title">Front BounceIn</span>
+                </div>
+                <p>Front of Panel content Bounce In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-19" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceInLeft.png" alt="" />
+                  <span class="card-title">Back BounceInLeft</span>
+                </div>
+                <p>Back of Panel content Bounce In Left</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceOutLeft.png" alt="" />
+                  <span class="card-title">Front BounceInLeft</span>
+                </div>
+                <p>Front of Panel content Bounce In Left</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-20" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceInRight.png" alt="" />
+                  <span class="card-title">Back BounceInRight</span>
+                </div>
+                <p>Back of Panel content Bounce In Right</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceOutRight.png" alt="" />
+                  <span class="card-title">Front BounceInRight</span>
+                </div>
+                <p>Front of Panel content Bounce In Right</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-21" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceInLDown.png" alt="" />
+                  <span class="card-title">Back BounceInDown</span>
+                </div>
+                <p>Back of Panel content Bounce In Down</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceOutDown.png" alt="" />
+                  <span class="card-title">Front BounceInDown</span>
+                </div>
+                <p>Front of Panel content Bounce In Down</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-22" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceInUp.png" alt="" />
+                  <span class="card-title">Back BounceInUp</span>
+                </div>
+                <p>Back of Panel content Bounce In Up</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/BounceOutUp.png" alt="" />
+                  <span class="card-title">Front BounceInUp</span>
+                </div>
+                <p>Front of Panel content Bounce In Up</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Others -->
+
+          <div id="others" class="mdl-cell mdl-cell--12-col">
+            <h3>Others <small>click any of these components below</small></h3>
+          </div>
+
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-23" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/LightSpeedOut.png" alt="" />
+                  <span class="card-title">Back LightSpeedIn</span>
+                </div>
+                <p>Back of Panel content Light Speed In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/LightSpeedOut.png" alt="" />
+                  <span class="card-title">Front LightSpeedIn</span>
+                </div>
+                <p>Front of Panel content Light Speed In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="mdl-cell mdl-cell-custom mdl-cell--4-col">
+
+            <div id="card-24" class="card-custom animated">
+
+              <div class="card back">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/RollIn.png" alt="" />
+                  <span class="card-title">Back RollIn</span>
+                </div>
+                <p>Back of Panel content Roll In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+              <div class="card front">
+                <div class="card-content white-text">
+                  <img src="http://api.adorable.io/avatars/136/RollOut.png" alt="" />
+                  <span class="card-title">Front RollIn</span>
+                </div>
+                <p>Front of Panel content Roll In</p>
+                <div class="card-action">
+                  <div class="btn-custom">
+                    toggle card
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="js/jquery.deanimate.js"></script>
+
+  <script>
+
+  // loading cards
+
+  $('.mdl-cell-custom').each(function(){
+    var self = $(this);
+    self.append('<div class="loading"></div>');
+    var load = $('.loading', self);
+    $('img', self).each(function(){
+      $(this).load(function(){
+        $(this).show().addClass('animated flipInY');
+        $('.card', self).fadeIn();
+        load.remove();
+      });
+    });
+  });
+
+  //deAnimate
+
+  $('#card-1').deAnimate({
+    trigger: 'click',
+    classIn: 'flipInY',
+    parallel: false
+  });
+
+  $('#card-2').deAnimate({
+    trigger: 'click',
+    classIn: 'flipInX',
+    parallel: false
+  });
+
+  $('#card-3').deAnimate({
+    trigger: 'click',
+    classIn: 'rotateIn',
+    parallel: false
+  });
+  $('#card-4').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeIn',
+    parallel: false
+  });
+
+  $('#card-5').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInDown',
+    parallel: false
+  });
+
+  $('#card-6').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInDownBig',
+    parallel: false
+  });
+
+  $('#card-7').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInLeft',
+    parallel: false
+  });
+
+  $('#card-8').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInLeftBig',
+    parallel: false
+  });
+
+  $('#card-9').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInRight',
+    parallel: false
+  });
+
+  $('#card-10').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInRightBig',
+    parallel: false
+  });
+
+  $('#card-11').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInUp',
+    parallel: false
+  });
+
+  $('#card-12').deAnimate({
+    trigger: 'click',
+    classIn: 'fadeInUpBig',
+    parallel: false
+  });
+
+  $('#card-13').deAnimate({
+    trigger: 'click',
+    classIn: 'zoomIn',
+    parallel: false
+  });
+
+  $('#card-14').deAnimate({
+    trigger: 'click',
+    classIn: 'zoomInLeft',
+    parallel: false
+  });
+
+  $('#card-15').deAnimate({
+    trigger: 'click',
+    classIn: 'zoomInRight',
+    parallel: false
+  });
+
+  $('#card-16').deAnimate({
+    trigger: 'click',
+    classIn: 'zoomInDown',
+    parallel: false
+  });
+
+  $('#card-17').deAnimate({
+    trigger: 'click',
+    classIn: 'zoomInUp',
+    parallel: false
+  });
+
+  $('#card-18').deAnimate({
+    trigger: 'click',
+    classIn: 'bounceIn',
+    parallel: false
+  });
+
+  $('#card-19').deAnimate({
+    trigger: 'click',
+    classIn: 'bounceInLeft',
+    parallel: false
+  });
+
+  $('#card-20').deAnimate({
+    trigger: 'click',
+    classIn: 'bounceInRight',
+    parallel: false
+  });
+
+  $('#card-21').deAnimate({
+    trigger: 'click',
+    classIn: 'bounceInDown',
+    parallel: false
+  });
+
+  $('#card-22').deAnimate({
+    trigger: 'click',
+    classIn: 'bounceInUp',
+    parallel: false
+  });
+
+  $('#card-23').deAnimate({
+    trigger: 'click',
+    classIn: 'lightSpeedIn',
+    parallel: false
+  });
+
+  $('#card-24').deAnimate({
+    trigger: 'click',
+    classIn: 'rollIn',
+    parallel: false
+  });
+
+  </script>
+
+</body>
+</html>

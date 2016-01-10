@@ -9,6 +9,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+h1.font-normal, h2.font-normal,
+h3.font-normal, h4.font-normal,
+h5.font-normal, h6.font-normal {
+  font-family: "Roboto", sans-serif;
+}
+
 nav.modify {
   background-color: rgba(255, 255, 255, 0);
   box-shadow: none;
@@ -73,7 +79,7 @@ nav .sub-title {
   /*background-color: #26a69a;*/
   text-align: center;
   letter-spacing: .5px;
-  transition: 0;
+  transition: none;
   cursor: pointer;
   border: none;
   border-radius: 2px;
@@ -144,4 +150,120 @@ ul.section.fixed {
   padding: 20px;
   border-radius: 4px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, .1) inset;
+}
+
+ul.list-custom {
+  padding-left: 30px;
+}
+
+ul.list-custom li {
+  list-style: disc;
+  padding: 3px 8px 3px 0;
+}
+
+ul.list-custom li > span {
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.title-collapsible {
+  font-weight: 600;
+}
+
+.collapsible-custom {
+  padding: 15px;
+}
+
+.collapsible-custom > .row {
+  margin-bottom: 0;
+}
+
+.collapsible-custom > .row > .col {
+  height: 266px;
+}
+
+/* card custom */
+
+.card-custom {
+  position: relative;
+}
+
+.card-custom .back,
+.card-custom .front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.card-custom .back .card-content {
+  background-color: rgb(244,67,54);
+}
+
+.card-custom .front .card-content {
+  background-color: rgb(63, 81, 181);
+}
+
+.card-custom .card-content {
+  height: 140px;
+  border-radius: 3px 3px 0 0;
+}
+
+.card-custom .card-content img {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.card-custom .card-title {
+  position: absolute;
+  top: 85px;
+}
+
+.card-custom p {
+  padding: 15px;
+  color: rgba(0, 0, 0, .5);
+}
+
+.card-custom .card-action {
+  padding: 10px;
+}
+
+.card-custom .btn-custom {
+  text-decoration: none;
+  color: rgb(244,67,54);
+  text-align: center;
+  letter-spacing: .5px;
+  transition: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  outline: 0;
+  padding: 0 10px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.card-custom .btn-custom:hover {
+  background-color: rgba(158,158,158,.2);
+}
+
+.card-custom .btn-custom:active {
+  background-color: rgba(158,158,158,.4);
+}
+
+ul.sub-itens {
+  padding-left: 15px;
+}
+
+footer.page-footer {
+  background-color: rgb(63, 81, 181);
 }
