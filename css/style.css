@@ -1,7 +1,15 @@
-/*@import url(https://fonts.googleapis.com/css?family=Chau+Philomene+One:400,400italic);*/
-/*@import url(https://fonts.googleapis.com/css?family=Squada+One);*/
-/*@import url(https://fonts.googleapis.com/css?family=Righteous);*/
 @import url(https://fonts.googleapis.com/css?family=Chewy);
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Chewy', cursive;
@@ -9,11 +17,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-h1.font-normal, h2.font-normal,
-h3.font-normal, h4.font-normal,
-h5.font-normal, h6.font-normal {
+.font-normal {
   font-family: "Roboto", sans-serif;
 }
+
+.font-style {
+  font-family: 'Chewy', cursive;
+}
+
+.float-right { float: left; }
+.float-right { float: right; }
 
 nav.modify {
   background-color: rgba(255, 255, 255, 0);
@@ -29,27 +42,63 @@ nav.modify.is-active {
 }
 
 nav .title, nav .sub-title {
-  float: left;
   margin: 0;
 }
 
 nav .title {
-  margin-top: 18px;
   margin-right: 10px;
   animation-name: randomTextColor;
   animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  font-size: 1.64rem;
 }
 
-nav .sub-title {
-  margin-top: 25px;
-  font-family: "Roboto", cursive;
+nav .sub-title { color: #000 }
+
+.github-buttons {
+    float: right;
+    margin-top: 6px;
+    height: 48px;
+}
+
+.side-nav-custom li {
+  padding: 0;
+}
+
+.side-nav-custom a {
+  height: 50px;
+  line-height: 50px;
+}
+
+.side-nav-custom a:hover {
+  color: #fff;
+  background-color: rgb(63, 81, 181);
+}
+
+.side-nav-custom ul.sub-itens {
+  padding: 0;
 }
 
 .logo-top h1, .logo-top h5 {
   color: #fff;
   text-shadow: 3px 1px 0px rgba(0, 0, 0, 0.2);
+  line-height: 35px;
+}
+
+a.button-collapse {
+  float: left;
+}
+
+a.button-collapse i.material-icons {
+  color: #000;
+  margin-right: 10px;
+  font-size: 2em;
+  animation-name: randomTextColor;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  margin-top: -1px;
 }
 
 .logo-top h1 {
@@ -76,7 +125,6 @@ nav .sub-title {
 .card-example .btn-custom {
   text-decoration: none;
   color: #fff;
-  /*background-color: #26a69a;*/
   text-align: center;
   letter-spacing: .5px;
   transition: none;
@@ -140,7 +188,16 @@ nav .sub-title {
   100% { color: #c0392b; }
 }
 
-ul.section.fixed {
+main {
+  flex: 1 0 auto;
+}
+
+ul.table-of-contents {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+ul.table-of-contents.fixed {
   top: 60px;
 }
 
@@ -210,12 +267,12 @@ ul.list-custom li > span {
 }
 
 .card-custom .card-content img {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
 }
 
 .card-custom .card-title {
@@ -266,4 +323,34 @@ ul.sub-itens {
 
 footer.page-footer {
   background-color: rgb(63, 81, 181);
+}
+
+footer.page-footer .container {
+  position: relative;
+}
+
+.addthis_native_toolbox {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+  .card-title {
+    font-size: 18px !important;
+    top: 90px !important;
+  }
+  .card-custom p {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .logo-top {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .example-header {
+    margin-top: 40px;
+  }
 }

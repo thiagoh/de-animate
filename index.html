@@ -20,15 +20,27 @@
       <nav class="modify">
         <div class="container">
           <div class="nav-wrapper">
-            <h5 class="title">DeAnimate</h5>
-            <h6 class="sub-title"> A jQuery lightweight plugin for Animation</h6>
+            <span class="title font-style">DeAnimate</span>
+            <span class="sub-title hide-on-small-only"> A jQuery lightweight plugin for Animation</span>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="side-nav" id="mobile-demo">
+            <div class="github-buttons">
+              <a class="github-button" href="https://github.com/thiagoh/de-animate" data-icon="octicon-star" data-count-href="/thiagoh/de-animate/stargazers" data-count-api="/repos/thiagoh/de-animate#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thiagoh/de-animate on GitHub">Star</a>
+            </div>
+            <ul class="side-nav side-nav-custom" id="mobile-demo">
               <li><a href="#gettingStarted">Getting Started</a></li>
               <li><a href="#useApi">Use API</a></li>
               <li><a href="#animateCssHelp">Animate.css help</a></li>
               <li><a href="#releaseHistory">Release History</a></li>
-              <li><a href="#examples">Examples</a></li>
+              <li>
+                <a href="#examples">Examples</a>
+                <ul class="sub-itens">
+                  <li><a href="#flip">Flip / Rotate</a></li>
+                  <li><a href="#fade">Fade</a></li>
+                  <li><a href="#zoom">Zoom</a></li>
+                  <li><a href="#bounce">Bounce</a></li>
+                  <li><a href="#others">Others</a></li>
+                </ul>
+              </li>
               <li><a href="#backToTop">back to top</a></li>
             </ul>
           </div>
@@ -37,1056 +49,1066 @@
     </div>
   </header>
 
-  <div class="parallax-container">
-    <div class="container example-header">
-      <div class="row">
-        <div class="col s7">
-          <div class="logo-top">
-            <h1>DeAnimate</h1>
-            <h5> A jQuery lightweight plugin for Animation</h5>
-          </div>
-        </div>
-        <div class="col s5">
-          <div id="card-example" class="card-example animated">
-            <div class="card back">
-              <div class="card-content white-text">
-                <span class="card-title">See example with <span class="current-animation"></span></span>
-                <p><span class="badge-animation">Back</span> of Panel content <span class="current-animation"></span>.</p>
-              </div>
-              <div class="card-action right-align">
-                <div class="btn-custom">toggle card</div>
-              </div>
+  <main>
+
+    <div class="parallax-container">
+      <div class="container example-header">
+        <div class="row">
+          <div class="col s12 m12 l7">
+            <div class="logo-top">
+              <h1>DeAnimate</h1>
+              <h5> A jQuery lightweight plugin for Animation</h5>
             </div>
-            <div class="card front">
-              <div class="card-content white-text">
-                <span class="card-title">See example with <span class="current-animation"></span></span>
-                <p><span class="badge-animation">Front</span> of Panel content <span class="current-animation"></span>.</p>
+          </div>
+          <div class="col s12 m12 l5">
+            <div id="card-example" class="card-example animated">
+              <div class="card back">
+                <div class="card-content white-text">
+                  <span class="card-title">See example with <span class="current-animation"></span></span>
+                  <p><span class="badge-animation">Back</span> of Panel content <span class="current-animation"></span>.</p>
+                </div>
+                <div class="card-action right-align">
+                  <div class="btn-custom">toggle card</div>
+                </div>
               </div>
-              <div class="card-action right-align">
-                <div class="btn-custom">toggle card</div>
+              <div class="card front">
+                <div class="card-content white-text">
+                  <span class="card-title">See example with <span class="current-animation"></span></span>
+                  <p><span class="badge-animation">Front</span> of Panel content <span class="current-animation"></span>.</p>
+                </div>
+                <div class="card-action right-align">
+                  <div class="btn-custom">toggle card</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="parallax"><img src="" /></div>
     </div>
-    <div class="parallax"><img src="" /></div>
-  </div>
 
-  <div class="container">
+    <div class="container">
 
-    <div class="row">
-      <div class="col s12 m9 l10">
-        <div id="gettingStarted" class="section scrollspy">
-          <h3>Getting Started</h3>
-          <p>Download the <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="download the production version" href="https://raw.github.com/thiagoh/de-animate/master/dist/de-animate.min.js">production version</a> or the <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="download the development version" href="https://raw.github.com/thiagoh/de-animate/master/dist/de-animate.js">development version</a>.</p>
-          <p>In your web page:</p>
-          <div class="code">
-            <code>
-              &lt;<span class="green-text">style</span>&gt;
-              <br>
-              <span class="purple-text">.front</span>, <span class="purple-text">.back</span> {
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue-text">position</span>: <span class="blue-text">absolute</span>;
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue-text">left</span>: <span class="blue-text">0</span>;
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue-text">top</span>: <span class="blue-text">0</span>;
-                <br>
-              }
-              <br>
-              &lt;/<span class="green-text">style</span>&gt;
-              <br><br>
-              &lt;<span class="green-text">script</span> <span class="purple-text">src</span>=<span class="blue-text">"jquery.js"</span>&gt;&lt;/<span class="green-text">script</span>&gt;
-              <br>
-              &lt;<span class="green-text">script</span> <span class="purple-text">src</span>=<span class="blue-text">"dist/de-animate.min.js"</span>&gt;&lt;/<span class="green-text">script</span>&gt;
-              <br><br>
-              &lt;<span class="green-text">div</span> <span class="purple-text">id</span>=<span class="blue-text">"myElement"</span> <span class="purple-text">class</span>=<span class="blue-text">"animated"</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">div</span> <span class="purple-text">class</span>=<span class="blue-text">"back"</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">h3</span>&gt;Back of Panel flipInX&lt;/<span class="green-text">h3</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">p</span>&gt;Back of Panel content Flipped X&lt;/<span class="green-text">p</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="green-text">div</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">div</span> <span class="purple-text">class</span>=<span class="blue-text">"front"</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">h3</span>&gt;Front of Panel flipInX&lt;/<span class="green-text">h3</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">p</span>&gt;Front of Panel content Flipped X&lt;/<span class="green-text">p</span>&gt;
-              <br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="green-text">div</span>&gt;
-              <br>
-              &lt;/<span class="green-text">div</span>&gt;
-              <br><br>
-              &lt;<span class="green-text">script</span>&gt;
-              <br>
-              <span class="purple-text">jQuery</span>(<span class="pink-text">function</span>($){
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple-text">$</span>(<span class="blue-text">'#myElement'</span>).<span class="purple-text">deAnimate</span>({
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger<span class="pink-text">:</span> <span class="blue-text">'click</span>',
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classIn<span class="pink-text">:</span> <span class="blue-text">'rotateIn'</span>
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;});
-                  <br>
-                });
-                <br>
-                &lt;/<span class="green-text">script</span>&gt;
-              </code>
-            </div>
-          </div>
-          <div id="useApi" class="section scrollspy">
-            <h3>Use API</h3>
+      <div class="row">
+        <div class="col s12 m9 l10">
+          <div id="gettingStarted" class="section scrollspy">
+            <h3>Getting Started</h3>
+            <p>Download the <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="download the production version" href="https://raw.github.com/thiagoh/de-animate/master/dist/de-animate.min.js">production version</a> or the <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="download the development version" href="https://raw.github.com/thiagoh/de-animate/master/dist/de-animate.js">development version</a>.</p>
+            <p>In your web page:</p>
             <div class="code">
               <code>
-                <span class="purple-text">$</span>(<span class="blue-text">'#myElement'</span>).<span class="purple-text">deAnimate</span>({
+                &lt;<span class="green-text">style</span>&gt;
+                <br>
+                <span class="purple-text">.front</span>, <span class="purple-text">.back</span> {
                   <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// 'click' or 'hover'</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue-text">position</span>: <span class="blue-text">absolute</span>;
                   <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;trigger<span class="pink-text">:</span> string,
-                  <br><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// your animation name. 'flipInX', 'rotateIn', etc.</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue-text">left</span>: <span class="blue-text">0</span>;
                   <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;classIn<span class="pink-text">:</span> string,
-                  <br><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// optional. default true. The animations of in and ou will</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="blue-text">top</span>: <span class="blue-text">0</span>;
                   <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// run in parallel or not</span>
+                }
+                <br>
+                &lt;/<span class="green-text">style</span>&gt;
+                <br><br>
+                &lt;<span class="green-text">script</span> <span class="purple-text">src</span>=<span class="blue-text">"jquery.js"</span>&gt;&lt;/<span class="green-text">script</span>&gt;
+                <br>
+                &lt;<span class="green-text">script</span> <span class="purple-text">src</span>=<span class="blue-text">"dist/de-animate.min.js"</span>&gt;&lt;/<span class="green-text">script</span>&gt;
+                <br><br>
+                &lt;<span class="green-text">div</span> <span class="purple-text">id</span>=<span class="blue-text">"myElement"</span> <span class="purple-text">class</span>=<span class="blue-text">"animated"</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">div</span> <span class="purple-text">class</span>=<span class="blue-text">"back"</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">h3</span>&gt;Back of Panel flipInX&lt;/<span class="green-text">h3</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">p</span>&gt;Panel content Flipped X&lt;/<span class="green-text">p</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="green-text">div</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">div</span> <span class="purple-text">class</span>=<span class="blue-text">"front"</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">h3</span>&gt;Front of Panel flipInX&lt;/<span class="green-text">h3</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">p</span>&gt;Panel content Flipped X&lt;/<span class="green-text">p</span>&gt;
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&lt;/<span class="green-text">div</span>&gt;
+                <br>
+                &lt;/<span class="green-text">div</span>&gt;
+                <br><br>
+                &lt;<span class="green-text">script</span>&gt;
+                <br>
+                <span class="purple-text">jQuery</span>(<span class="pink-text">function</span>($){
                   <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;parallel<span class="pink-text">:</span> boolean,
-                  <br><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// optional. default 500. Animation's speed in ms.</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="purple-text">$</span>(<span class="blue-text">'#myElement'</span>).<span class="purple-text">deAnimate</span>({
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;trigger<span class="pink-text">:</span> <span class="blue-text">'click</span>',
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;classIn<span class="pink-text">:</span> <span class="blue-text">'rotateIn'</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;});
+                    <br>
+                  });
                   <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;speed<span class="pink-text">:</span> number,
-                  <br><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// front element selector. default 'auto'. If you choose 'auto',</span>
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// the plugin will search for the first element with the classes</span>
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// 'de-animate-front' or 'front' or the first child of the element</span>
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;front<span class="pink-text">:</span> <span class="blue-text">'auto'</span>,
-                  <br><br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// back element selector. default 'auto'. If you choose 'auto',</span>
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// the plugin will search for the first element with the classes</span>
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;// 'de-animate-back' or 'back' or the second child of the element
-                  <br>
-                  &nbsp;&nbsp;&nbsp;&nbsp;back<span class="pink-text">:</span> <span class="blue-text">'auto'</span>
-                  <br>
-                });
-              </code>
+                  &lt;/<span class="green-text">script</span>&gt;
+                </code>
+              </div>
             </div>
-            <h5>Important!</h5>
-            <p>
-              If you'll use a composed class animation (like Animate.css ones), you <strong>must</strong> add the class animated to the element you want to animate.
-            </p>
-          </div>
-          <div id="animateCssHelp" class="section scrollspy">
-            <h3>Animate.css help</h3>
-            <p>Animate.css has a lot of animations and you can check all of them at <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="go to animate.css github page" href="https://github.com/daneden/animate.css" target="_blank">animate.css github page</a> but here a some of them:</p>
-
-            <ul class="list-custom">
-              <li><span class="grey lighten-3">bounce</span></li>
-              <li><span class="grey lighten-3">flash</span></li>
-              <li><span class="grey lighten-3">pulse</span></li>
-              <li><span class="grey lighten-3">rubberBand</span></li>
-              <li><span class="grey lighten-3">shake</span></li>
-              <li><span class="grey lighten-3">headShake</span></li>
-              <li><span class="grey lighten-3">swing</span></li>
-              <li><span class="grey lighten-3">tada</span></li>
-              <li><span class="grey lighten-3">wobble</span></li>
-              <li><span class="grey lighten-3">jello</span></li>
-              <li><span class="grey lighten-3">bounceIn</span></li>
-              <li><span class="grey lighten-3">fadeIn</span></li>
-              <li><span class="grey lighten-3">fadeOut</span></li>
-              <li><span class="grey lighten-3">flipInX</span></li>
-              <li><span class="grey lighten-3">flipInY</span></li>
-              <li><span class="grey lighten-3">flipOutX</span></li>
-              <li><span class="grey lighten-3">flipOutY</span></li>
-              <li><span class="grey lighten-3">lightSpeedIn</span></li>
-              <li><span class="grey lighten-3">lightSpeedOut</span></li>
-              <li><span class="grey lighten-3">rotateIn</span></li>
-              <li><span class="grey lighten-3">rotateOut</span></li>
-              <li><span class="grey lighten-3">hinge</span></li>
-              <li><span class="grey lighten-3">rollIn</span></li>
-              <li><span class="grey lighten-3">rollOut</span></li>
-              <li><span class="grey lighten-3">zoomIn</span></li>
-              <li><span class="grey lighten-3">zoomOut</span></li>
-              <li><span class="grey lighten-3">slideInUp</span></li>
-              <li><span class="grey lighten-3">slideOutUp</span></li>
-            </ul>
-          </div>
-          <div id="releaseHistory" class="section scrollspy">
-            <h3>Release History</h3>
-            <ul class="list-custom">
-              <li>v0.2.2 Release Candidate</li>
-              <li>v0.1.0 First release (beta)</li>
-            </ul>
-          </div>
-          <div id="examples" class="section scrollspy">
-            <h3>Examples</h3>
-            <ul class="collapsible" data-collapsible="expandable">
-              <li id="flip" class="scrollspy">
-                <div class="collapsible-header"><h5 class="title-collapsible font-normal">Flip / Rotate</h5></div>
-                <div class="collapsible-body collapsible-custom">
-                  <div class="row">
-                    <div class="col s4">
-
-                      <div id="card-1" class="card-custom animated">
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FlipOutX.png" alt="">
-                            <span class="card-title">Back FlipInX</span>
-                          </div>
-                          <p>Back of Panel content Flip In X.</p>
-                          <div class="card-action">
-                            <div class="btn-custom">toggle card</div>
-                          </div>
-                        </div>
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FlipInX.png" alt="">
-                            <span class="card-title">Front FlipInX</span>
-                          </div>
-                          <p>Front of Panel content Flip In X.</p>
-                          <div class="card-action">
-                            <div class="btn-custom">toggle card</div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-2" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FlipInY.png" alt="" />
-                            <span class="card-title">Back FlipInY</span>
-                          </div>
-                          <p>Back of Panel content Flipped Y</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FlipOutY.png" alt="" />
-                            <span class="card-title">Front FlipInY</span>
-                          </div>
-                          <p>Front of Panel content Flipped Y</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-3" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/rotateIn.png" alt="" />
-                            <span class="card-title">Back RotateIn</span>
-                          </div>
-                          <p>Back of Panel content Rotate</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/rotateOut.png" alt="" />
-                            <span class="card-title">Front RotateIn</span>
-                          </div>
-                          <p>Front of Panel content Rotate</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li id="fade" class="scrollspy">
-                <div class="collapsible-header"><h5 class="title-collapsible font-normal">Fade</h5></div>
-                <div class="collapsible-body collapsible-custom">
-                  <div class="row">
-                    <div class="col s4">
-
-                      <div id="card-4" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeIn.png" alt="" />
-                            <span class="card-title">Back FadeIn</span>
-                          </div>
-                          <p>Back of Panel content Fade In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOut.png" alt="" />
-                            <span class="card-title">Front FadeIn</span>
-                          </div>
-                          <p>Front of Panel content Fade In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-5" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInDown.png" alt="" />
-                            <span class="card-title">Back FadeInDown</span>
-                          </div>
-                          <p>Back of Panel content Fade In Down</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutDown.png" alt="" />
-                            <span class="card-title">Front FadeInDown</span>
-                          </div>
-                          <p>Front of Panel content Fade In Down</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-6" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInDownBig.png" alt="" />
-                            <span class="card-title">Back FadeInDownBig</span>
-                          </div>
-                          <p>Back of Panel content Fade In Down Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutDownBig.png" alt="" />
-                            <span class="card-title">Front FadeInDownBig</span>
-                          </div>
-                          <p>Front of Panel content Fade In Down Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-7" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInLeft.png" alt="" />
-                            <span class="card-title">Back FadeInLeft</span>
-                          </div>
-                          <p>Back of Panel content Fade In Left</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutLeft.png" alt="" />
-                            <span class="card-title">Front FadeInLeft</span>
-                          </div>
-                          <p>Front of Panel content Fade In Left</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-8" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInLeftBig.png" alt="" />
-                            <span class="card-title">Back FadeInLeftBig</span>
-                          </div>
-                          <p>Back of Panel content Fade In Left Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutLeftBig.png" alt="" />
-                            <span class="card-title">Front FadeInLeftBig</span>
-                          </div>
-                          <p>Front of Panel content Fade In Left Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-9" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInRight.png" alt="" />
-                            <span class="card-title">Back FadeInRight</span>
-                          </div>
-                          <p>Back of Panel content Fade In Right</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutRight.png" alt="" />
-                            <span class="card-title">Front FadeInRight</span>
-                          </div>
-                          <p>Front of Panel content Fade In Right</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-10" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInRightBig.png" alt="" />
-                            <span class="card-title">Back FadeInRightBig</span>
-                          </div>
-                          <p>Back of Panel content Fade In Right Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutRightBig.png" alt="" />
-                            <span class="card-title">Front FadeInRightBig</span>
-                          </div>
-                          <p>Front of Panel content Fade In Right Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-11" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInUp.png" alt="" />
-                            <span class="card-title">Back FadeInUp</span>
-                          </div>
-                          <p>Back of Panel content Fade In Up</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutUp.png" alt="" />
-                            <span class="card-title">Front FadeInUp</span>
-                          </div>
-                          <p>Front of Panel content Fade In Up</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-12" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeInUpBig.png" alt="" />
-                            <span class="card-title">Back FadeInUpBig</span>
-                          </div>
-                          <p>Back of Panel content Fade In Up Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/FadeOutUpBig.png" alt="" />
-                            <span class="card-title">Front FadeInUpBig</span>
-                          </div>
-                          <p>Front of Panel content Fade In Up Big</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li id="zoom" class="scrollspy">
-                <div class="collapsible-header"><h5 class="title-collapsible font-normal">Zoom</h5></div>
-                <div class="collapsible-body collapsible-custom">
-
-                  <div class="row">
-                    <div class="col s4">
-
-                      <div id="card-13" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomIn.png" alt="" />
-                            <span class="card-title">Back ZoomIn</span>
-                          </div>
-                          <p>Back of Panel content Zoom In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomOut.png" alt="" />
-                            <span class="card-title">Front ZoomIn</span>
-                          </div>
-                          <p>Front of Panel content Zoom In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-14" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomInLeft.png" alt="" />
-                            <span class="card-title">Back ZoomInLeft</span>
-                          </div>
-                          <p>Back of Panel content Zoom In Left</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomOutLeft.png" alt="" />
-                            <span class="card-title">Front ZoomInLeft</span>
-                          </div>
-                          <p>Front of Panel content Zoom In Left</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-15" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomInRight.png" alt="" />
-                            <span class="card-title">Back ZoomInRight</span>
-                          </div>
-                          <p>Back of Panel content Zoom In Right</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomOutRight.png" alt="" />
-                            <span class="card-title">Front ZoomInRight</span>
-                          </div>
-                          <p>Front of Panel content Zoom In Right</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-16" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomInDown.png" alt="" />
-                            <span class="card-title">Back ZoomInDown</span>
-                          </div>
-                          <p>Back of Panel content Zoom In Down</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomOutDown.png" alt="" />
-                            <span class="card-title">Front ZoomInDown</span>
-                          </div>
-                          <p>Front of Panel content Zoom In Down</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-17" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomInUp.png" alt="" />
-                            <span class="card-title">Back ZoomInUp</span>
-                          </div>
-                          <p>Back of Panel content Zoom In Up</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/ZoomOutUp.png" alt="" />
-                            <span class="card-title">Front ZoomInUp</span>
-                          </div>
-                          <p>Front of Panel content Zoom In Up</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                  </div>
-
-                </div>
-              </li>
-              <li id="bounce" class="scrollspy">
-                <div class="collapsible-header"><h5 class="title-collapsible font-normal">Bounce</h5></div>
-                <div class="collapsible-body collapsible-custom">
-                  <div class="row">
-                    <div class="col s4">
-
-                      <div id="card-18" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceIn.png" alt="" />
-                            <span class="card-title">Back BounceIn</span>
-                          </div>
-                          <p>Back of Panel content Bounce In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceOut.png" alt="" />
-                            <span class="card-title">Front BounceIn</span>
-                          </div>
-                          <p>Front of Panel content Bounce In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-19" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceInLeft.png" alt="" />
-                            <span class="card-title">Back BounceInLeft</span>
-                          </div>
-                          <p>Back of Panel content Bounce In Left</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceOutLeft.png" alt="" />
-                            <span class="card-title">Front BounceInLeft</span>
-                          </div>
-                          <p>Front of Panel content Bounce In Left</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-20" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceInRight.png" alt="" />
-                            <span class="card-title">Back BounceInRight</span>
-                          </div>
-                          <p>Back of Panel content Bounce In Right</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceOutRight.png" alt="" />
-                            <span class="card-title">Front BounceInRight</span>
-                          </div>
-                          <p>Front of Panel content Bounce In Right</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-21" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceInLDown.png" alt="" />
-                            <span class="card-title">Back BounceInDown</span>
-                          </div>
-                          <p>Back of Panel content Bounce In Down</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceOutDown.png" alt="" />
-                            <span class="card-title">Front BounceInDown</span>
-                          </div>
-                          <p>Front of Panel content Bounce In Down</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-22" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceInUp.png" alt="" />
-                            <span class="card-title">Back BounceInUp</span>
-                          </div>
-                          <p>Back of Panel content Bounce In Up</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/BounceOutUp.png" alt="" />
-                            <span class="card-title">Front BounceInUp</span>
-                          </div>
-                          <p>Front of Panel content Bounce In Up</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li id="others" class="scrollspy">
-                <div class="collapsible-header"><h5 class="title-collapsible font-normal">Others</h5></div>
-                <div class="collapsible-body collapsible-custom">
-                  <div class="row">
-                    <div class="col s4">
-
-                      <div id="card-23" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/LightSpeedOut.png" alt="" />
-                            <span class="card-title">Back LightSpeedIn</span>
-                          </div>
-                          <p>Back of Panel content Light Speed In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/LightSpeedOut.png" alt="" />
-                            <span class="card-title">Front LightSpeedIn</span>
-                          </div>
-                          <p>Front of Panel content Light Speed In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                    <div class="col s4">
-
-                      <div id="card-24" class="card-custom animated">
-
-                        <div class="card back">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/RollIn.png" alt="" />
-                            <span class="card-title">Back RollIn</span>
-                          </div>
-                          <p>Back of Panel content Roll In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card front">
-                          <div class="card-content white-text">
-                            <img src="http://api.adorable.io/avatars/136/RollOut.png" alt="" />
-                            <span class="card-title">Front RollIn</span>
-                          </div>
-                          <p>Front of Panel content Roll In</p>
-                          <div class="card-action">
-                            <div class="btn-custom">
-                              toggle card
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-        <div class="col hide-on-small-only m3 l2">
-          <ul class="section table-of-contents">
-            <li><a href="#gettingStarted">Getting Started</a></li>
-            <li><a href="#useApi">Use API</a></li>
-            <li><a href="#animateCssHelp">Animate.css help</a></li>
-            <li><a href="#releaseHistory">Release History</a></li>
-            <li>
-              <a href="#examples">Examples</a>
-              <ul class="sub-itens">
-                <li><a href="#flip">Flip / Rotate</a></li>
-                <li><a href="#fade">Fade</a></li>
-                <li><a href="#zoom">Zoom</a></li>
-                <li><a href="#bounce">Bounce</a></li>
-                <li><a href="#others">Others</a></li>
+            <div id="useApi" class="section scrollspy">
+              <h3>Use API</h3>
+              <div class="code">
+                <code>
+                  <span class="purple-text">$</span>(<span class="blue-text">'#myElement'</span>).<span class="purple-text">deAnimate</span>({
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// 'click' or 'hover'</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;trigger<span class="pink-text">:</span> string,
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// your animation name. 'flipInX', 'rotateIn', etc.</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;classIn<span class="pink-text">:</span> string,
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// optional. default true. The animations of in and ou will</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// run in parallel or not</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;parallel<span class="pink-text">:</span> boolean,
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// optional. default 500. Animation's speed in ms.</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;speed<span class="pink-text">:</span> number,
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// front element selector. default 'auto'. If you choose 'auto',</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// the plugin will search for the first element with the classes</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// 'de-animate-front' or 'front' or the first child of the element</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;front<span class="pink-text">:</span> <span class="blue-text">'auto'</span>,
+                    <br><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// back element selector. default 'auto'. If you choose 'auto',</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// the plugin will search for the first element with the classes</span>
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;// 'de-animate-back' or 'back' or the second child of the element
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;back<span class="pink-text">:</span> <span class="blue-text">'auto'</span>
+                    <br>
+                  });
+                </code>
+              </div>
+              <h5 class="font-normal">Important!</h5>
+              <p>
+                If you'll use a composed class animation (like Animate.css ones), you <strong>must</strong> add the class animated to the element you want to animate.
+              </p>
+            </div>
+            <div id="animateCssHelp" class="section scrollspy">
+              <h3>Animate.css help</h3>
+              <p>Animate.css has a lot of animations and you can check all of them at <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="go to animate.css github page" href="https://github.com/daneden/animate.css" target="_blank">animate.css github page</a> but here a some of them:</p>
+
+              <ul class="list-custom">
+                <li><span class="grey lighten-3">bounce</span></li>
+                <li><span class="grey lighten-3">flash</span></li>
+                <li><span class="grey lighten-3">pulse</span></li>
+                <li><span class="grey lighten-3">rubberBand</span></li>
+                <li><span class="grey lighten-3">shake</span></li>
+                <li><span class="grey lighten-3">headShake</span></li>
+                <li><span class="grey lighten-3">swing</span></li>
+                <li><span class="grey lighten-3">tada</span></li>
+                <li><span class="grey lighten-3">wobble</span></li>
+                <li><span class="grey lighten-3">jello</span></li>
+                <li><span class="grey lighten-3">bounceIn</span></li>
+                <li><span class="grey lighten-3">fadeIn</span></li>
+                <li><span class="grey lighten-3">fadeOut</span></li>
+                <li><span class="grey lighten-3">flipInX</span></li>
+                <li><span class="grey lighten-3">flipInY</span></li>
+                <li><span class="grey lighten-3">flipOutX</span></li>
+                <li><span class="grey lighten-3">flipOutY</span></li>
+                <li><span class="grey lighten-3">lightSpeedIn</span></li>
+                <li><span class="grey lighten-3">lightSpeedOut</span></li>
+                <li><span class="grey lighten-3">rotateIn</span></li>
+                <li><span class="grey lighten-3">rotateOut</span></li>
+                <li><span class="grey lighten-3">hinge</span></li>
+                <li><span class="grey lighten-3">rollIn</span></li>
+                <li><span class="grey lighten-3">rollOut</span></li>
+                <li><span class="grey lighten-3">zoomIn</span></li>
+                <li><span class="grey lighten-3">zoomOut</span></li>
+                <li><span class="grey lighten-3">slideInUp</span></li>
+                <li><span class="grey lighten-3">slideOutUp</span></li>
               </ul>
-            </li>
-            <li><a href="#backToTop">back to top</a></li>
-          </ul>
+            </div>
+            <div id="releaseHistory" class="section scrollspy">
+              <h3>Release History</h3>
+              <ul class="list-custom">
+                <li>v0.2.2 Release Candidate</li>
+                <li>v0.1.0 First release (beta)</li>
+              </ul>
+            </div>
+            <div id="examples" class="section scrollspy">
+              <h3>Examples</h3>
+              <ul class="collapsible" data-collapsible="expandable">
+                <li id="flip" class="scrollspy">
+                  <div class="collapsible-header"><h5 class="title-collapsible font-normal">Flip / Rotate</h5></div>
+                  <div class="collapsible-body collapsible-custom">
+                    <div class="row">
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-1" class="card-custom animated">
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FlipOutX.png" alt="">
+                              <span class="card-title">Back FlipInX</span>
+                            </div>
+                            <p>Panel content Flip In X.</p>
+                            <div class="card-action">
+                              <div class="btn-custom">toggle card</div>
+                            </div>
+                          </div>
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FlipInX.png" alt="">
+                              <span class="card-title">Front FlipInX</span>
+                            </div>
+                            <p>Panel content Flip In X.</p>
+                            <div class="card-action">
+                              <div class="btn-custom">toggle card</div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-2" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FlipInY.png" alt="" />
+                              <span class="card-title">Back FlipInY</span>
+                            </div>
+                            <p>Panel content Flipped Y</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FlipOutY.png" alt="" />
+                              <span class="card-title">Front FlipInY</span>
+                            </div>
+                            <p>Panel content Flipped Y</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-3" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/rotateIn.png" alt="" />
+                              <span class="card-title">Back RotateIn</span>
+                            </div>
+                            <p>Panel content Rotate</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/rotateOut.png" alt="" />
+                              <span class="card-title">Front RotateIn</span>
+                            </div>
+                            <p>Panel content Rotate</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li id="fade" class="scrollspy">
+                  <div class="collapsible-header"><h5 class="title-collapsible font-normal">Fade</h5></div>
+                  <div class="collapsible-body collapsible-custom">
+                    <div class="row">
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-4" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeIn.png" alt="" />
+                              <span class="card-title">Back FadeIn</span>
+                            </div>
+                            <p>Panel content Fade In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOut.png" alt="" />
+                              <span class="card-title">Front FadeIn</span>
+                            </div>
+                            <p>Panel content Fade In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-5" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInDown.png" alt="" />
+                              <span class="card-title">Back FadeInDown</span>
+                            </div>
+                            <p>Panel content Fade In Down</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutDown.png" alt="" />
+                              <span class="card-title">Front FadeInDown</span>
+                            </div>
+                            <p>Panel content Fade In Down</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-6" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInDownBig.png" alt="" />
+                              <span class="card-title">Back FadeInDownBig</span>
+                            </div>
+                            <p>Panel content Fade In Down Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutDownBig.png" alt="" />
+                              <span class="card-title">Front FadeInDownBig</span>
+                            </div>
+                            <p>Panel content Fade In Down Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-7" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInLeft.png" alt="" />
+                              <span class="card-title">Back FadeInLeft</span>
+                            </div>
+                            <p>Panel content Fade In Left</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutLeft.png" alt="" />
+                              <span class="card-title">Front FadeInLeft</span>
+                            </div>
+                            <p>Panel content Fade In Left</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-8" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInLeftBig.png" alt="" />
+                              <span class="card-title">Back FadeInLeftBig</span>
+                            </div>
+                            <p>Panel content Fade In Left Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutLeftBig.png" alt="" />
+                              <span class="card-title">Front FadeInLeftBig</span>
+                            </div>
+                            <p>Panel content Fade In Left Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-9" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInRight.png" alt="" />
+                              <span class="card-title">Back FadeInRight</span>
+                            </div>
+                            <p>Panel content Fade In Right</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutRight.png" alt="" />
+                              <span class="card-title">Front FadeInRight</span>
+                            </div>
+                            <p>Panel content Fade In Right</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-10" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInRightBig.png" alt="" />
+                              <span class="card-title">Back FadeInRightBig</span>
+                            </div>
+                            <p>Panel content Fade In Right Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutRightBig.png" alt="" />
+                              <span class="card-title">Front FadeInRightBig</span>
+                            </div>
+                            <p>Panel content Fade In Right Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-11" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInUp.png" alt="" />
+                              <span class="card-title">Back FadeInUp</span>
+                            </div>
+                            <p>Panel content Fade In Up</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutUp.png" alt="" />
+                              <span class="card-title">Front FadeInUp</span>
+                            </div>
+                            <p>Panel content Fade In Up</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-12" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeInUpBig.png" alt="" />
+                              <span class="card-title">Back FadeInUpBig</span>
+                            </div>
+                            <p>Panel content Fade In Up Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/FadeOutUpBig.png" alt="" />
+                              <span class="card-title">Front FadeInUpBig</span>
+                            </div>
+                            <p>Panel content Fade In Up Big</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li id="zoom" class="scrollspy">
+                  <div class="collapsible-header"><h5 class="title-collapsible font-normal">Zoom</h5></div>
+                  <div class="collapsible-body collapsible-custom">
+
+                    <div class="row">
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-13" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomIn.png" alt="" />
+                              <span class="card-title">Back ZoomIn</span>
+                            </div>
+                            <p>Panel content Zoom In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomOut.png" alt="" />
+                              <span class="card-title">Front ZoomIn</span>
+                            </div>
+                            <p>Panel content Zoom In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-14" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomInLeft.png" alt="" />
+                              <span class="card-title">Back ZoomInLeft</span>
+                            </div>
+                            <p>Panel content Zoom In Left</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomOutLeft.png" alt="" />
+                              <span class="card-title">Front ZoomInLeft</span>
+                            </div>
+                            <p>Panel content Zoom In Left</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-15" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomInRight.png" alt="" />
+                              <span class="card-title">Back ZoomInRight</span>
+                            </div>
+                            <p>Panel content Zoom In Right</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomOutRight.png" alt="" />
+                              <span class="card-title">Front ZoomInRight</span>
+                            </div>
+                            <p>Panel content Zoom In Right</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-16" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomInDown.png" alt="" />
+                              <span class="card-title">Back ZoomInDown</span>
+                            </div>
+                            <p>Panel content Zoom In Down</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomOutDown.png" alt="" />
+                              <span class="card-title">Front ZoomInDown</span>
+                            </div>
+                            <p>Panel content Zoom In Down</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-17" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomInUp.png" alt="" />
+                              <span class="card-title">Back ZoomInUp</span>
+                            </div>
+                            <p>Panel content Zoom In Up</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/ZoomOutUp.png" alt="" />
+                              <span class="card-title">Front ZoomInUp</span>
+                            </div>
+                            <p>Panel content Zoom In Up</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </li>
+                <li id="bounce" class="scrollspy">
+                  <div class="collapsible-header"><h5 class="title-collapsible font-normal">Bounce</h5></div>
+                  <div class="collapsible-body collapsible-custom">
+                    <div class="row">
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-18" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceIn.png" alt="" />
+                              <span class="card-title">Back BounceIn</span>
+                            </div>
+                            <p>Panel content Bounce In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceOut.png" alt="" />
+                              <span class="card-title">Front BounceIn</span>
+                            </div>
+                            <p>Panel content Bounce In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-19" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceInLeft.png" alt="" />
+                              <span class="card-title">Back BounceInLeft</span>
+                            </div>
+                            <p>Panel content Bounce In Left</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceOutLeft.png" alt="" />
+                              <span class="card-title">Front BounceInLeft</span>
+                            </div>
+                            <p>Panel content Bounce In Left</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-20" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceInRight.png" alt="" />
+                              <span class="card-title">Back BounceInRight</span>
+                            </div>
+                            <p>Panel content Bounce In Right</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceOutRight.png" alt="" />
+                              <span class="card-title">Front BounceInRight</span>
+                            </div>
+                            <p>Panel content Bounce In Right</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-21" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceInLDown.png" alt="" />
+                              <span class="card-title">Back BounceInDown</span>
+                            </div>
+                            <p>Panel content Bounce In Down</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceOutDown.png" alt="" />
+                              <span class="card-title">Front BounceInDown</span>
+                            </div>
+                            <p>Panel content Bounce In Down</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-22" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceInUp.png" alt="" />
+                              <span class="card-title">Back BounceInUp</span>
+                            </div>
+                            <p>Panel content Bounce In Up</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/BounceOutUp.png" alt="" />
+                              <span class="card-title">Front BounceInUp</span>
+                            </div>
+                            <p>Panel content Bounce In Up</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li id="others" class="scrollspy">
+                  <div class="collapsible-header"><h5 class="title-collapsible font-normal">Others</h5></div>
+                  <div class="collapsible-body collapsible-custom">
+                    <div class="row">
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-23" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/LightSpeedOut.png" alt="" />
+                              <span class="card-title">Back LightSpeedIn</span>
+                            </div>
+                            <p>Panel content Light Speed In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/LightSpeedOut.png" alt="" />
+                              <span class="card-title">Front LightSpeedIn</span>
+                            </div>
+                            <p>Panel content Light Speed In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                      <div class="col s12 m12 l4">
+
+                        <div id="card-24" class="card-custom animated">
+
+                          <div class="card back">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/RollIn.png" alt="" />
+                              <span class="card-title">Back RollIn</span>
+                            </div>
+                            <p>Panel content Roll In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card front">
+                            <div class="card-content white-text">
+                              <img src="http://api.adorable.io/avatars/136/RollOut.png" alt="" />
+                              <span class="card-title">Front RollIn</span>
+                            </div>
+                            <p>Panel content Roll In</p>
+                            <div class="card-action">
+                              <div class="btn-custom">
+                                toggle card
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="col hide-on-small-only m3 l2">
+            <ul class="section table-of-contents">
+              <li><a href="#gettingStarted">Getting Started</a></li>
+              <li><a href="#useApi">Use API</a></li>
+              <li><a href="#animateCssHelp">Animate.css help</a></li>
+              <li><a href="#releaseHistory">Release History</a></li>
+              <li>
+                <a href="#examples">Examples</a>
+                <ul class="sub-itens">
+                  <li><a href="#flip">Flip / Rotate</a></li>
+                  <li><a href="#fade">Fade</a></li>
+                  <li><a href="#zoom">Zoom</a></li>
+                  <li><a href="#bounce">Bounce</a></li>
+                  <li><a href="#others">Others</a></li>
+                </ul>
+              </li>
+              <li><a href="#backToTop">back to top</a></li>
+            </ul>
+          </div>
         </div>
+
       </div>
 
-    </div>
+    </main>
 
     <footer class="page-footer">
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
+          <div class="col s12">
             <h5 class="white-text">DeAnimate</h5>
             <p class="grey-text text-lighten-4">A jQuery lightweight plugin for Animation</p>
+            <!-- Addthis buttons share -->
+            <p>
+              <a class="github-button" href="https://github.com/thiagoh" data-count-href="/thiagoh/followers" data-count-api="/users/thiagoh#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @thiagoh on GitHub">Follow @thiagoh</a>
+              <a class="github-button" href="https://github.com/interaminense" data-count-href="/interaminense/followers" data-count-api="/users/interaminense#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @interaminense on GitHub">Follow @interaminense</a>
+            </p>
+            <div class="addthis_native_toolbox"></div>
           </div>
         </div>
       </div>
@@ -1102,6 +1124,8 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <!--Import jQuery deanimate.js-->
     <script type="text/javascript" src="js/jquery.deanimate.js"></script>
+    <!-- Import github buttons.js -->
+    <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
     <script>
     $(document).ready(function(){
@@ -1289,6 +1313,20 @@
 
     });
 
+    </script>
+
+    <!-- Addthis -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-500ef8864eff892c" async="async"></script>
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72276705-1', 'auto');
+    ga('send', 'pageview');
     </script>
 
   </body>
