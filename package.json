@@ -1,5 +1,5 @@
 {
-  "name": "jquery-plugin",
+  "name": "de-animate",
   "version": "0.2.3",
   "engines": {
     "node": ">= 0.8.0"

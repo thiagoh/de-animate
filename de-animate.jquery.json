@@ -6,21 +6,32 @@
   "homepage": "https://github.com/thiagoh/de-animate",
   "author": {
     "name": "Thiago Andrade",
-    "email": "thiagoh@gmail.com"
+    "email": "thiagoh@gmail.com",
+    "url": "https://about.me/thiagoh"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/thiagoh/de-animate"
   },
   "bugs": "https://github.com/thiagoh/de-animate/issues",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/thiagoh/de-animate/blob/master/LICENSE-MIT"
-    }
-  ],
+  "licenses": "MIT",
   "dependencies": {
     "jquery": "1.7"
   },
-  "keywords": []
+  "keywords": [
+    "animate",
+    "animation",
+    "deanimate",
+    "de-animate",
+    "transition",
+    "timing",
+    "delay",
+    "fade",
+    "slide",
+    "width",
+    "height",
+    "flip",
+    "jquery-plugin",
+    "ecosystem:jquery"
+  ]
 }

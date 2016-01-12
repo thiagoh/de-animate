@@ -1,7 +1,7 @@
 {
   "name": "de-animate",
   "description": "A jQuery lightweight plugin for Animation",
-  "main": "src/jquery.deanimate.js",
+  "main": "src/jquery.de-animate.js",
   "authors": [
     "Thiago Andrade <thiagoh@gmail.com>",
     "Adriano Interaminense <adriano.interaminense@gmail.com>",
