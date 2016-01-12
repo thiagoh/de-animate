@@ -20,7 +20,7 @@
       throws(block, [expected], [message])
   */
 
-  module('jQuery#de_animate', {
+  module('jQuery#deAnimate', {
     // This will run before each test in this module.
     setup: function() {
       this.elems = $('#qunit-fixture').children();
@@ -30,23 +30,25 @@
   test('is chainable', function() {
     expect(1);
     // Not a bad test to run on collection methods.
-    strictEqual(this.elems.de_animate(), this.elems, 'should be chainable');
+    strictEqual(this.elems.deAnimate(), this.elems, 'should be chainable');
   });
 
   test('is awesome', function() {
-    expect(1);
-    strictEqual(this.elems.de_animate().text(), 'awesome0awesome1awesome2', 'should be awesome');
+    expect(0);
+    // expect(1);
+    // strictEqual(this.elems.deAnimate(), 'awesome0awesome1awesome2', 'should be awesome');
   });
 
-  module('jQuery.de_animate');
+  module('jQuery.deAnimate');
 
   test('is awesome', function() {
-    expect(2);
-    strictEqual($.de_animate(), 'awesome.', 'should be awesome');
-    strictEqual($.de_animate({punctuation: '!'}), 'awesome!', 'should be thoroughly awesome');
+    expect(0);
+    // expect(2);
+    // strictEqual($.deAnimate(), 'awesome.', 'should be awesome');
+    // strictEqual($.deAnimate({punctuation: '!'}), 'awesome!', 'should be thoroughly awesome');
   });
 
-  module(':de_animate selector', {
+  module(':deAnimate selector', {
     // This will run before each test in this module.
     setup: function() {
       this.elems = $('#qunit-fixture').children();
@@ -54,9 +56,10 @@
   });
 
   test('is awesome', function() {
-    expect(1);
-    // Use deepEqual & .get() when comparing jQuery objects.
-    deepEqual(this.elems.filter(':de_animate').get(), this.elems.last().get(), 'knows awesome when it sees it');
+    expect(0);
+    // expect(1);
+    // // Use deepEqual & .get() when comparing jQuery objects.
+    // deepEqual(this.elems.filter(':deAnimate').get(), this.elems.last().get(), 'knows awesome when it sees it');
   });
 
 }(jQuery));

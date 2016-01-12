@@ -1,9 +1,10 @@
 {
   "name": "de-animate",
-  "description": "animation plugin for jQuery",
+  "description": "A jQuery lightweight plugin for Animation",
   "main": "src/jquery.deanimate.js",
   "authors": [
-    "Thiago Andrade <thiagoh@gmail.com>"
+    "Thiago Andrade <thiagoh@gmail.com>",
+    "Adriano Interaminense <adriano.interaminense@gmail.com>",
   ],
   "license": "MIT",
   "keywords": [
@@ -22,7 +23,7 @@
     "jquery-plugin",
     "ecosystem:jquery"
   ],
-  "homepage": "https://github.com/thiagoh/de-animate",
+  "homepage": "http://thiagoh.github.io/de-animate/",
   "moduleType": [
     "globals"
   ],
