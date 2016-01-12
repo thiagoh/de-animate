@@ -5,8 +5,8 @@ A jQuery lightweight plugin for Animation
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://cdn.rawgit.com/thiagoh/de-animate/master/dist/jquery.de-animate.min.js
-[max]: https://cdn.rawgit.com/thiagoh/de-animate/master/dist/jquery.de-animate.js
+[min]: https://cdn.rawgit.com/thiagoh/de-animate/0.2.3/dist/jquery.de-animate.min.js
+[max]: https://cdn.rawgit.com/thiagoh/de-animate/0.2.3/dist/jquery.de-animate.js
 
 In your web page:
 
