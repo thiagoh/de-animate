@@ -144,9 +144,6 @@
                     }
                 });
             }
-        },
-        startsWith = function(source, str) {
-            return source.slice(0, str.length) === str;
         };
 
     //https://github.com/nnattawat/flip
