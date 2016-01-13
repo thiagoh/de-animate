@@ -24,7 +24,12 @@
             <span class="sub-title hide-on-small-only"> A jQuery lightweight plugin for Animation</span>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <div class="github-buttons">
-              <a class="github-button" href="https://github.com/thiagoh/de-animate" data-icon="octicon-star" data-count-href="/thiagoh/de-animate/stargazers" data-count-api="/repos/thiagoh/de-animate#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thiagoh/de-animate on GitHub">Star</a>
+              <div class="btn-tool">
+                <a class="github-button" href="https://github.com/thiagoh/de-animate" data-icon="octicon-star" data-count-href="/thiagoh/de-animate/stargazers" data-count-api="/repos/thiagoh/de-animate#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star thiagoh/de-animate on GitHub">Star</a>
+              </div>
+              <div class="btn-tool">
+                <div class="fb-like" data-href="http://thiagoh.github.io/de-animate" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+              </div>
             </div>
             <ul class="side-nav side-nav-custom" id="mobile-demo">
               <li><a href="#gettingStarted">Getting Started</a></li>
@@ -115,7 +120,7 @@
                 <br>
                 &lt;<span class="green-text">script</span> <span class="purple-text">src</span>=<span class="blue-text">"dist/de-animate.min.js"</span>&gt;&lt;/<span class="green-text">script</span>&gt;
                 <br><br>
-                &lt;<span class="green-text">div</span> <span class="purple-text">id</span>=<span class="blue-text">"myElement"</span> <span class="purple-text">class</span>=<span class="blue-text">"animated"</span>&gt;
+                &lt;<span class="green-text">div</span> <span class="purple-text">id</span>=<span class="blue-text">"myElement"</span> <span class="purple-text">class</span>=<span class="blue-text">"card animated"</span>&gt;
                 <br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="green-text">div</span> <span class="purple-text">class</span>=<span class="blue-text">"back"</span>&gt;
                 <br>
@@ -189,7 +194,7 @@
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// the plugin will search for the first element with the classes</span>
                     <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;// 'de-animate-back' or 'back' or the second child of the element
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="grey-text">// 'de-animate-back' or 'back' or the second child of the element</span>
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;back<span class="pink-text">:</span> <span class="blue-text">'auto'</span>
                     <br>
@@ -1104,9 +1109,8 @@
             <h5 class="white-text">DeAnimate</h5>
             <p class="grey-text text-lighten-4">A jQuery lightweight plugin for Animation</p>
             <!-- Addthis buttons share -->
-            <p>
-              <a class="github-button" href="https://github.com/thiagoh" data-count-href="/thiagoh/followers" data-count-api="/users/thiagoh#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @thiagoh on GitHub">Follow @thiagoh</a>
-              <a class="github-button" href="https://github.com/interaminense" data-count-href="/interaminense/followers" data-count-api="/users/interaminense#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @interaminense on GitHub">Follow @interaminense</a>
+            <p class="white-text">
+              created by <a href="http://github.com/thiagoh" target="_blank">thiago</a> and designed by <a href="http://github.com/interaminense" target="_blank">interaminense</a>
             </p>
             <div class="addthis_native_toolbox"></div>
           </div>
@@ -1119,6 +1123,11 @@
       </div>
     </footer>
 
+    <!-- fork me on github -->
+    <a href="https://github.com/thiagoh/de-animate" target="_blank" style="z-index: 999;">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    </a>
+
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -1126,197 +1135,21 @@
     <script type="text/javascript" src="js/jquery.deanimate.js"></script>
     <!-- Import github buttons.js -->
     <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-
-    <script>
-    $(document).ready(function(){
-
-      $(".button-collapse").sideNav();
-      $('.scrollspy').scrollSpy();
-
-      $('.collapsible').collapsible();
-
-      var _tcos = function(elem, aClass, tam) {
-        var _activeScroll = function(){
-          $(window).scrollTop() > tam ? $(elem).addClass(aClass) : $(elem).removeClass(aClass);
-        }
-        $(window).on('scroll', function(){
-          _activeScroll();
-        });
-        _activeScroll();
-      };
-
-      _tcos('header nav', 'is-active', 250);
-      _tcos('ul.section', 'fixed', 440);
-
-      //load animation flip random
-      var animations = ['flipInX', 'flipInY', 'bounceIn', 'fadeInDown', 'fadeInUp', 'rotateIn', 'zoomInDown'];
-      var chooseAnimation = animations[Math.floor((Math.random() * 7) + 0)]
-      $('.current-animation').html(chooseAnimation);
-      $('#card-example').deAnimate({
-        trigger:  'click',
-        classIn:  chooseAnimation,
-        parallel: false
-      });
-
-      //load image parallax random
-      var imgRandom = 'img/' + Math.floor((Math.random() * 6) + 1) + '.jpg';
-      $('.parallax img').attr('src', imgRandom);
-      $('.parallax').parallax();
-
-      //load collapsible all expandible
-      $('.collapsible-body').show();
-      $('ul.collapsible li, ul.collapsible .collapsible-header').addClass('active');
-
-      //animatons demo
-      $('#card-1').deAnimate({
-        trigger: 'click',
-        classIn: 'flipInY',
-        parallel: false
-      });
-
-      $('#card-2').deAnimate({
-        trigger: 'click',
-        classIn: 'flipInX',
-        parallel: false
-      });
-
-      $('#card-3').deAnimate({
-        trigger: 'click',
-        classIn: 'rotateIn',
-        parallel: false
-      });
-      $('#card-4').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeIn',
-        parallel: false
-      });
-
-      $('#card-5').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInDown',
-        parallel: false
-      });
-
-      $('#card-6').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInDownBig',
-        parallel: false
-      });
-
-      $('#card-7').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInLeft',
-        parallel: false
-      });
-
-      $('#card-8').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInLeftBig',
-        parallel: false
-      });
-
-      $('#card-9').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInRight',
-        parallel: false
-      });
-
-      $('#card-10').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInRightBig',
-        parallel: false
-      });
-
-      $('#card-11').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInUp',
-        parallel: false
-      });
-
-      $('#card-12').deAnimate({
-        trigger: 'click',
-        classIn: 'fadeInUpBig',
-        parallel: false
-      });
-
-      $('#card-13').deAnimate({
-        trigger: 'click',
-        classIn: 'zoomIn',
-        parallel: false
-      });
-
-      $('#card-14').deAnimate({
-        trigger: 'click',
-        classIn: 'zoomInLeft',
-        parallel: false
-      });
-
-      $('#card-15').deAnimate({
-        trigger: 'click',
-        classIn: 'zoomInRight',
-        parallel: false
-      });
-
-      $('#card-16').deAnimate({
-        trigger: 'click',
-        classIn: 'zoomInDown',
-        parallel: false
-      });
-
-      $('#card-17').deAnimate({
-        trigger: 'click',
-        classIn: 'zoomInUp',
-        parallel: false
-      });
-
-      $('#card-18').deAnimate({
-        trigger: 'click',
-        classIn: 'bounceIn',
-        parallel: false
-      });
-
-      $('#card-19').deAnimate({
-        trigger: 'click',
-        classIn: 'bounceInLeft',
-        parallel: false
-      });
-
-      $('#card-20').deAnimate({
-        trigger: 'click',
-        classIn: 'bounceInRight',
-        parallel: false
-      });
-
-      $('#card-21').deAnimate({
-        trigger: 'click',
-        classIn: 'bounceInDown',
-        parallel: false
-      });
-
-      $('#card-22').deAnimate({
-        trigger: 'click',
-        classIn: 'bounceInUp',
-        parallel: false
-      });
-
-      $('#card-23').deAnimate({
-        trigger: 'click',
-        classIn: 'lightSpeedIn',
-        parallel: false
-      });
-
-      $('#card-24').deAnimate({
-        trigger: 'click',
-        classIn: 'rollIn',
-        parallel: false
-      });
-
-    });
-
-    </script>
-
-    <!-- Addthis -->
+    <!-- Addthis in footer of page -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-500ef8864eff892c" async="async"></script>
+    <!-- Script.js -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <!-- like button facebook in header of page -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <!-- Google Analytics -->
     <script>
@@ -1329,7 +1162,7 @@
     ga('create', 'UA-72313043-1', 'auto', 'clientTracker'); //followed by thiagoh
     ga('send', 'pageview');
     ga('clientTracker.send', 'pageview');
-    
+
     </script>
 
   </body>
