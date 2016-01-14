@@ -205,7 +205,7 @@ ul.table-of-contents {
 
 ul.table-of-contents.fixed {
   top: 60px;
-  z-index: 999;
+  z-index: 997;
 }
 
 .code {
