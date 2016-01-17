@@ -361,3 +361,8 @@ footer.page-footer .container {
     margin-top: 40px;
   }
 }
+
+@media screen and (max-width: 380px) {
+  .page-footer h5.white-text {
+    margin-top: 80px;
+  }
