@@ -1,6 +1,8 @@
 # De Animate
 
-A jQuery lightweight plugin for Animation
+A jQuery lightweight plugin for Animation. Checkout our [page](http://thiagoh.github.io/de-animate/)
+
+
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
