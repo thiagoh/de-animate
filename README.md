@@ -35,7 +35,7 @@ $(function() {
 ```
 
 ## Examples
-To see more examples of how to use DeAnimate please check the [demo directory](https://github.com/thiagoh/de-animate/tree/master/demo).
+To see more examples of how to use DeAnimate please check the [demo directory](https://github.com/thiagoh/de-animate/tree/master/demo) or in our [page](http://thiagoh.github.io/de-animate/)
 
 ## Building
 Developers can easily build DeAnimate using NPM.
