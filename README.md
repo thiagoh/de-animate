@@ -3,7 +3,6 @@
 A jQuery lightweight plugin for Animation. Checkout our [page](http://thiagoh.github.io/de-animate/)
 
 
-
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
@@ -35,6 +34,9 @@ $(function() {
 ```
 
 ## Examples
+
+![alt img](https://raw.githubusercontent.com/thiagoh/de-animate/master/demo/de-animate.gif)
+
 To see more examples of how to use DeAnimate please check the [demo directory](https://github.com/thiagoh/de-animate/tree/master/demo) or in our [page](http://thiagoh.github.io/de-animate/)
 
 ## Building
