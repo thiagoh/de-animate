@@ -1,7 +1,7 @@
 {
   "name": "de-animate",
   "description": "A jQuery lightweight plugin for Animation",
-  "version": "3.0.0",
+  "version": "1.0.5",
   "engines": {
     "node": ">= 0.8.0"
   },
