@@ -67,4 +67,5 @@ bower install de-animate
 ```
 
 ## Release History
+* 1.0.5 first release
 * 0.2.2 beta release
