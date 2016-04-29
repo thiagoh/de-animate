@@ -1,4 +1,10 @@
-# De Animate
+[![](https://img.shields.io/travis/thiagoh/de-animate.svg)]((https://github.com/thiagoh/de-animate/releases/latest))
+[![view on npm](http://img.shields.io/npm/v/de-animate.svg)](https://www.npmjs.org/package/de-animate)
+[![view on github](https://img.shields.io/node/v/de-animate.svg)](https://github.com/thiagoh/de-animate)
+[![npm](https://img.shields.io/npm/l/de-animate.svg?style=flat-square)](https://www.npmjs.org/package/de-animate)
+[![npm module downloads](https://img.shields.io/npm/dt/de-animate.svg)](https://www.npmjs.org/package/de-animate)
+
+# De-animate
 
 A jQuery lightweight plugin for Animation. Checkout our [page](http://thiagoh.github.io/de-animate/)
 
